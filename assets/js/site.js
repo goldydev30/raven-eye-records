@@ -2,18 +2,6 @@
 (function () {
   "use strict";
 
-  var SIGIL =
-    '<svg viewBox="0 0 100 100" aria-hidden="true" fill="none" stroke="currentColor">' +
-    '<circle cx="50" cy="50" r="46" stroke-width="1.2" opacity=".5"/>' +
-    '<circle cx="50" cy="50" r="40" stroke-width=".6" opacity=".35"/>' +
-    '<g stroke-width="1" opacity=".55">' +
-    '<path d="M50 4v12M50 84v12M4 50h12M84 50h12M17.5 17.5l8.5 8.5M74 74l8.5 8.5M82.5 17.5L74 26M26 74l-8.5 8.5"/></g>' +
-    '<path d="M14 50 Q50 16 86 50 Q50 84 14 50Z" stroke-width="2.2"/>' +
-    '<circle cx="50" cy="50" r="14" fill="#7a0c0e" stroke="none"/>' +
-    '<circle cx="50" cy="50" r="6" fill="#000" stroke="none"/>' +
-    '<path d="M43 44 l4 3" stroke="#efe9dc" stroke-width="2" stroke-linecap="round"/>' +
-    '</svg>';
-
   var NAV = [
     ["index.html", "Home"],
     ["roster.html", "Artists"],
@@ -161,7 +149,7 @@
     var header = document.createElement("header");
     header.className = "site";
     header.innerHTML = '<div class="wrap">' +
-      '<a class="brand" href="index.html" aria-label="Raven Eye Records home">' + SIGIL +
+      '<a class="brand" href="index.html" aria-label="Raven Eye Records home">' + '<span class="mark" data-logo="mark"></span>' +
       '<span><span class="name">Raven Eye</span><span class="sub">Records</span></span></a>' +
       '<button class="menu-btn" aria-expanded="false" aria-controls="mainnav">Menu</button>' +
       '<nav class="main" id="mainnav" aria-label="Main"><ul>' +
@@ -172,7 +160,7 @@
     var footer = document.createElement("footer");
     footer.className = "site";
     footer.innerHTML = '<div class="wrap"><div class="cols">' +
-      '<div><a class="brand" href="index.html">' + SIGIL + '<span><span class="name">Raven Eye</span><span class="sub">Records</span></span></a>' +
+      '<div><a class="brand" href="index.html">' + '<span class="mark" data-logo="mark"></span>' + '<span><span class="name">Raven Eye</span><span class="sub">Records</span></span></a>' +
       '<p style="margin-top:1rem">An independent label and lyrics codex for black, pagan, folk and melodic extreme metal. The words matter here.</p>' +
       '<form class="newsletter" onsubmit="event.preventDefault();this.innerHTML=\'<span>Thank you. The ravens will find you.</span>\'">' +
       '<label class="sr-only" for="nl">Email</label><input id="nl" type="email" placeholder="Your email" required><button class="btn blood" type="submit">Join</button></form></div>' +
@@ -191,6 +179,48 @@
       var open = nav.classList.toggle("open");
       btn.setAttribute("aria-expanded", open ? "true" : "false");
     });
+  }
+
+  /* ---------- the raven's eye ----------
+     Inline copies of the logo (ids namespaced per copy). Every eye blinks when the pointer
+     passes over it; the large masthead eye also blinks now and then on its own and slowly
+     closes as the visitor scrolls past it. */
+  var eyeN = 0, reduceMotion = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
+  function mountLogos() {
+    document.querySelectorAll("[data-logo]:not([data-mounted])").forEach(function (slot) {
+      var src = slot.getAttribute("data-logo") === "mark" ? window.RER_MARK : window.RER_LOGO;
+      if (!src) return;
+      var n = ++eyeN;
+      slot.innerHTML = src.replace(/id="rer-/g, 'id="rer' + n + "-").replace(/url\(#rer-/g, "url(#rer" + n + "-");
+      slot.setAttribute("data-mounted", "1");
+      var eye = slot.querySelector(".rer-eye");
+      if (slot.getAttribute("data-logo") === "mark") eye.setAttribute("aria-hidden", "true");
+      var host = slot.closest("a") || slot;
+      host.addEventListener("mouseenter", function () { blink(eye); });
+      host.addEventListener("focus", function () { blink(eye); });
+      if (slot.getAttribute("data-logo") === "full") watchEye(slot, eye);
+    });
+  }
+  function blink(eye, hold) {
+    if (eye.classList.contains("closed")) return;
+    eye.classList.add("closed");
+    setTimeout(function () { eye.classList.remove("closed"); }, hold || 230);
+  }
+  function watchEye(slot, eye) {
+    if (reduceMotion) return;
+    (function idle() {
+      setTimeout(function () { if (!document.hidden) blink(eye, Math.random() < .25 ? 700 : 230); idle(); }, 4000 + Math.random() * 7000);
+    })();
+    var ticking = false;
+    function onScroll() {
+      ticking = false;
+      var r = slot.getBoundingClientRect();
+      // 0 while the whole eye is on screen, 1 once it has scrolled out of view above
+      var shut = Math.max(0, Math.min(1, -r.top / (r.height * .9)));
+      eye.style.setProperty("--shut", shut.toFixed(3));
+    }
+    window.addEventListener("scroll", function () { if (!ticking) { ticking = true; requestAnimationFrame(onScroll); } }, { passive: true });
+    onScroll();
   }
 
   /* ---------- pages ---------- */
@@ -432,6 +462,7 @@
 
   document.addEventListener("DOMContentLoaded", function () {
     layout();
+    mountLogos();
     renderHome();
     renderRoster();
     renderBand();

@@ -42,6 +42,10 @@ python3 scripts/build_data.py path/to/bands.csv
 
 Column names are matched loosely (see the script's docstring). Set `featured` to `yes` to pin a band to the home page. Band tiles show a faint album cover behind the band's initial. By default the visitor's browser looks one up on Deezer (falling back to iTunes) by exact band name and caches it for 30 days; bands flagged `provisional` skip the lookup so a namesake's cover never appears. To choose the image yourself, put it in `assets/img/bands/` and set the band's `image` field to its path.
 
+## Logo
+
+The raven-eye logo is drawn in code by `scripts/build_logo.py` (thousands of jittered ink strokes, roughened with an SVG filter for a hand-cut look). Run `python3 scripts/build_logo.py` after changing it; it writes `assets/js/logo.js` (the animated inline version) plus `assets/img/raven-eye.svg` and the favicon `assets/img/sigil.svg`. Every eye blinks when the pointer passes over it; the large masthead eye also blinks on its own and closes as you scroll past it.
+
 ## Publishing on GitHub Pages
 
 Settings → Pages → Deploy from a branch → `main` / root. (Pages on a private repository needs a paid GitHub plan.)
