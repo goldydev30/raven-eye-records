@@ -9,7 +9,7 @@
     '<g stroke-width="1" opacity=".55">' +
     '<path d="M50 4v12M50 84v12M4 50h12M84 50h12M17.5 17.5l8.5 8.5M74 74l8.5 8.5M82.5 17.5L74 26M26 74l-8.5 8.5"/></g>' +
     '<path d="M14 50 Q50 16 86 50 Q50 84 14 50Z" stroke-width="2.2"/>' +
-    '<circle cx="50" cy="50" r="14" fill="#8c1c1c" stroke="none"/>' +
+    '<circle cx="50" cy="50" r="14" fill="#7a0c0e" stroke="none"/>' +
     '<circle cx="50" cy="50" r="6" fill="#000" stroke="none"/>' +
     '<path d="M43 44 l4 3" stroke="#efe9dc" stroke-width="2" stroke-linecap="round"/>' +
     '</svg>';
@@ -39,12 +39,12 @@
   function hash(s) { var h = 2166136261; for (var i = 0; i < s.length; i++) { h ^= s.charCodeAt(i); h = Math.imul(h, 16777619); } return h >>> 0; }
   function artStyle(name) {
     var h = hash(name);
-    var hues = [0, 355, 210, 200, 30, 270, 120, 190];
+    var hues = [0, 356, 352, 4, 10, 348, 0, 20];
     var hue = hues[h % hues.length];
     var a = (h >> 3) % 360, x = 20 + (h >> 7) % 60, y = 20 + (h >> 11) % 60;
     return "background:" +
-      "radial-gradient(circle at " + x + "% " + y + "%, hsla(" + hue + ",45%,28%,.85), transparent 60%)," +
-      "linear-gradient(" + a + "deg, hsl(" + hue + ",18%,9%), hsl(" + hue + ",10%,4%))";
+      "radial-gradient(circle at " + x + "% " + y + "%, hsla(" + hue + ",70%,20%,.8), transparent 60%)," +
+      "linear-gradient(" + a + "deg, hsl(" + hue + ",25%,6%), hsl(" + hue + ",15%,2%))";
   }
   function initial(name) { var m = String(name).match(/[A-Za-z0-9]/); return m ? m[0].toUpperCase() : "?"; }
 
@@ -116,7 +116,7 @@
     if (!url || el.querySelector(".cover")) return;
     var img = new Image();
     img.className = "cover"; img.alt = ""; img.referrerPolicy = "no-referrer";
-    img.onload = function () { img.classList.add("on"); };
+    img.onload = function () { img.classList.add("on"); el.classList.add("has-cover"); };
     img.src = url;
     el.insertBefore(img, el.firstChild);
   }
