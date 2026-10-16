@@ -205,14 +205,12 @@ body { background: radial-gradient(ellipse at 50% -10%, rgba(90,6,8,.18), transp
 .band-card:hover, .theme-card:hover { box-shadow: 0 0 28px rgba(110,11,11,.25); }
 ::selection { background: var(--blood); color: #fff; }
 
-/* ---------- logo animation: turning rings, breathing eye ---------- */
-.rer-ring .rer-geo, .rer-ring .rer-braid, .rer-ring .rer-runes { transform-origin: 200px 200px; }
-.rer-ring .rer-geo { animation: rer-spin 240s linear infinite; }
-.rer-ring .rer-braid { animation: rer-spin 150s linear infinite reverse; }
-.rer-ring .rer-runes { animation: rer-spin 100s linear infinite; }
-.rer-ring .rer-eye-glow { transform-origin: 238px 104px; animation: rer-glow 5.5s ease-in-out infinite; }
+/* ---------- logo animation: turning letter ring, breathing eye ---------- */
+.rer-ring .rer-letters { transform-origin: 200px 200px; animation: rer-spin 120s linear infinite; }
+.rer-ring .rer-eye-glow, .rer-ring .rer-glint { transform-box: fill-box; transform-origin: center; }
+.rer-ring .rer-eye-glow { animation: rer-glow 5.5s ease-in-out infinite; }
 .rer-ring .rer-eye-core { animation: rer-core 5.5s ease-in-out infinite; }
-.rer-ring .rer-glint { transform-origin: 241px 99px; animation: rer-glint 9s ease-in-out infinite; }
+.rer-ring .rer-glint { animation: rer-glint 9s ease-in-out infinite; }
 @keyframes rer-spin { to { transform: rotate(360deg); } }
 @keyframes rer-glow { 0%, 100% { opacity: .45; transform: scale(.8); } 50% { opacity: 1; transform: scale(1.35); } }
 @keyframes rer-core { 0%, 100% { fill: #ffd36a; } 50% { fill: #fff6d0; } }
