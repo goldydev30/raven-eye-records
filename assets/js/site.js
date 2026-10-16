@@ -149,8 +149,7 @@
     var header = document.createElement("header");
     header.className = "site";
     header.innerHTML = '<div class="wrap">' +
-      '<a class="brand" href="index.html" aria-label="Raven Eye Records home">' + '<span class="mark" data-logo="mark"></span>' +
-      '<span><span class="name">Raven Eye</span><span class="sub">Records</span></span></a>' +
+      '<a class="brand" href="index.html"><span class="name">Raven Eye Records</span></a>' +
       '<button class="menu-btn" aria-expanded="false" aria-controls="mainnav">Menu</button>' +
       '<nav class="main" id="mainnav" aria-label="Main"><ul>' +
       NAV.map(function (n) {
@@ -160,7 +159,7 @@
     var footer = document.createElement("footer");
     footer.className = "site";
     footer.innerHTML = '<div class="wrap"><div class="cols">' +
-      '<div><a class="brand" href="index.html">' + '<span class="mark" data-logo="mark"></span>' + '<span><span class="name">Raven Eye</span><span class="sub">Records</span></span></a>' +
+      '<div><a class="brand" href="index.html"><span class="name">Raven Eye Records</span></a>' +
       '<p style="margin-top:1rem">An independent label and lyrics codex for black, pagan, folk and melodic extreme metal. The words matter here.</p>' +
       '<form class="newsletter" onsubmit="event.preventDefault();this.innerHTML=\'<span>Thank you. The ravens will find you.</span>\'">' +
       '<label class="sr-only" for="nl">Email</label><input id="nl" type="email" placeholder="Your email" required><button class="btn blood" type="submit">Join</button></form></div>' +
@@ -181,46 +180,17 @@
     });
   }
 
-  /* ---------- the raven's eye ----------
-     Inline copies of the logo (ids namespaced per copy). Every eye blinks when the pointer
-     passes over it; the large masthead eye also blinks now and then on its own and slowly
-     closes as the visitor scrolls past it. */
-  var eyeN = 0, reduceMotion = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
+  /* ---------- the logo ----------
+     Inline copies of the raven ring (ids namespaced per copy). The rings turn and the eye
+     glows through CSS animations in style.css. */
+  var logoN = 0;
   function mountLogos() {
     document.querySelectorAll("[data-logo]:not([data-mounted])").forEach(function (slot) {
-      var src = slot.getAttribute("data-logo") === "mark" ? window.RER_MARK : window.RER_LOGO;
-      if (!src) return;
-      var n = ++eyeN;
-      slot.innerHTML = src.replace(/id="rer-/g, 'id="rer' + n + "-").replace(/url\(#rer-/g, "url(#rer" + n + "-");
+      if (!window.RER_LOGO) return;
+      var n = ++logoN;
+      slot.innerHTML = window.RER_LOGO.replace(/id="rer-/g, 'id="rer' + n + "-").replace(/url\(#rer-/g, "url(#rer" + n + "-");
       slot.setAttribute("data-mounted", "1");
-      var eye = slot.querySelector(".rer-eye");
-      if (slot.getAttribute("data-logo") === "mark") eye.setAttribute("aria-hidden", "true");
-      var host = slot.closest("a") || slot;
-      host.addEventListener("mouseenter", function () { blink(eye); });
-      host.addEventListener("focus", function () { blink(eye); });
-      if (slot.getAttribute("data-logo") === "full") watchEye(slot, eye);
     });
-  }
-  function blink(eye, hold) {
-    if (eye.classList.contains("closed")) return;
-    eye.classList.add("closed");
-    setTimeout(function () { eye.classList.remove("closed"); }, hold || 230);
-  }
-  function watchEye(slot, eye) {
-    if (reduceMotion) return;
-    (function idle() {
-      setTimeout(function () { if (!document.hidden) blink(eye, Math.random() < .25 ? 700 : 230); idle(); }, 4000 + Math.random() * 7000);
-    })();
-    var ticking = false;
-    function onScroll() {
-      ticking = false;
-      var r = slot.getBoundingClientRect();
-      // 0 while the whole eye is on screen, 1 once it has scrolled out of view above
-      var shut = Math.max(0, Math.min(1, -r.top / (r.height * .9)));
-      eye.style.setProperty("--shut", shut.toFixed(3));
-    }
-    window.addEventListener("scroll", function () { if (!ticking) { ticking = true; requestAnimationFrame(onScroll); } }, { passive: true });
-    onScroll();
   }
 
   /* ---------- pages ---------- */
