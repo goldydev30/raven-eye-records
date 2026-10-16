@@ -2,322 +2,1514 @@
 window.RER_BANDS = [
   {
     "name": "1914",
-    "slug": "1914"
+    "slug": "1914",
+    "country": "Ukraine",
+    "genre": "Blackened Death/Doom Metal",
+    "label": "Napalm Records",
+    "families": [
+      "Blackened Death Metal"
+    ],
+    "themes": [
+      "World War I"
+    ],
+    "status": "Active",
+    "location": "Lviv",
+    "ma_url": "https://www.metal-archives.com/bands/1914/3540396156",
+    "provisional": false
   },
   {
     "name": "Achsar",
-    "slug": "achsar"
+    "slug": "achsar",
+    "country": "Slovakia",
+    "genre": "Folk/Death Metal",
+    "label": "Independent",
+    "families": [
+      "Melodic Death Metal"
+    ],
+    "themes": [
+      "Battle",
+      "Heroes",
+      "Legends",
+      "Slavic and Slovak heritage"
+    ],
+    "status": "Active",
+    "location": "Levice",
+    "ma_url": "https://www.metal-archives.com/bands/Achsar/65375",
+    "provisional": false
   },
   {
     "name": "Alburnum",
-    "slug": "alburnum"
+    "slug": "alburnum",
+    "country": "Netherlands",
+    "genre": "Atmospheric/Folk Black Metal",
+    "label": "Independent",
+    "families": [
+      "Blackened Folk Metal"
+    ],
+    "themes": [
+      "Nature",
+      "The roots of the ancients",
+      "Healing through nature and introspection"
+    ],
+    "status": "Active",
+    "location": "Gelderland",
+    "ma_url": "https://www.metal-archives.com/bands/Alburnum/3540509088",
+    "provisional": true
   },
   {
     "name": "Amon Amarth",
-    "slug": "amon-amarth"
+    "slug": "amon-amarth",
+    "country": "Sweden",
+    "genre": "Melodic Death Metal",
+    "label": "Metal Blade Records",
+    "families": [
+      "Melodic Death Metal"
+    ],
+    "themes": [
+      "Vikings",
+      "Norse mythology",
+      "Battles"
+    ],
+    "status": "Active",
+    "location": "Tumba, Stockholm",
+    "ma_url": "https://www.metal-archives.com/bands/amon_amarth/150",
+    "provisional": false
   },
   {
     "name": "Amorphis",
-    "slug": "amorphis"
+    "slug": "amorphis",
+    "country": "Finland",
+    "genre": "Progressive Death/Doom Metal (early); Melodic Heavy/Death Metal (later)",
+    "label": "Reigning Phoenix Music",
+    "families": [
+      "Melodic Death Metal"
+    ],
+    "themes": [
+      "Kalevala",
+      "Finnish mythology",
+      "Nature",
+      "Life and death"
+    ],
+    "status": "Active",
+    "location": "Helsinki, Uusimaa",
+    "ma_url": "https://www.metal-archives.com/bands/amorphis/1",
+    "provisional": false
   },
   {
     "name": "Aran Angmar",
-    "slug": "aran-angmar"
+    "slug": "aran-angmar",
+    "country": "Italy",
+    "genre": "Black Metal (melodic/cosmic)",
+    "label": "Soulseller Records",
+    "families": [
+      "Melodic Black Metal"
+    ],
+    "themes": [
+      "Cosmos",
+      "Death",
+      "Occultism"
+    ],
+    "status": "Active",
+    "location": "unverified",
+    "ma_url": "https://www.metal-archives.com/bands/Aran_Angmar/3540480039",
+    "provisional": false
   },
   {
     "name": "Arctos",
-    "slug": "arctos"
+    "slug": "arctos",
+    "country": "Canada",
+    "genre": "Atmospheric/Melodic Black Metal",
+    "label": "Northern Silence Productions",
+    "families": [
+      "Melodic Black Metal"
+    ],
+    "themes": [
+      "Northern Alberta wilderness",
+      "Canadian Rockies",
+      "Desolation"
+    ],
+    "status": "Active",
+    "location": "Edmonton, Alberta",
+    "ma_url": "https://www.metal-archives.com/bands/Arctos/3540428609",
+    "provisional": true
   },
   {
     "name": "Ardere",
-    "slug": "ardere"
+    "slug": "ardere",
+    "country": "Australia",
+    "genre": "Black Metal (Viking/pagan leaning, per titles; MA genre unverified)",
+    "label": "Independent",
+    "families": [
+      "Blackened Folk Metal"
+    ],
+    "themes": [
+      "Norse mythology",
+      "Wolves",
+      "Ragnarök"
+    ],
+    "status": "Active",
+    "location": "Melbourne area, Victoria (unverified; Discogs notes copies sold at a Melbourne show)",
+    "ma_url": "https://www.metal-archives.com/bands/Ardere/3540496751",
+    "provisional": false
   },
   {
     "name": "Argarok",
-    "slug": "argarok"
+    "slug": "argarok",
+    "country": "Germany (unverified; German lyrics and titles)",
+    "genre": "Epic Death Metal",
+    "label": "Independent",
+    "families": [
+      "Melodic Death Metal"
+    ],
+    "themes": [
+      "Mythology and doom"
+    ],
+    "status": "Active",
+    "ma_url": "https://www.metal-archives.com/bands/Argorok/3540477252",
+    "provisional": true
   },
   {
     "name": "Astralborne",
-    "slug": "astralborne"
+    "slug": "astralborne",
+    "country": "United States",
+    "genre": "Melodic Death Metal",
+    "label": "Prosthetic Records",
+    "families": [
+      "Melodic Death Metal"
+    ],
+    "themes": [
+      "Cosmic impermanence",
+      "Interdimensional and celestial themes"
+    ],
+    "status": "Active",
+    "location": "US Midwest (state unverified)",
+    "ma_url": "https://www.metal-archives.com/bands/Astralborne/3540460587",
+    "provisional": false
   },
   {
     "name": "Atavistia",
-    "slug": "atavistia"
+    "slug": "atavistia",
+    "country": "Canada",
+    "genre": "Melodic Death/Black Metal (folk-leaning)",
+    "label": "Independent",
+    "families": [
+      "Melodic Death Metal",
+      "Melodic Black Metal"
+    ],
+    "themes": [
+      "Norse culture",
+      "Mythology",
+      "Cosmic themes",
+      "Canadian winter landscapes"
+    ],
+    "status": "Active",
+    "location": "Vancouver, British Columbia",
+    "ma_url": "https://www.metal-archives.com/bands/Atavistia/3540431700",
+    "provisional": false
   },
   {
     "name": "Blackbraid",
-    "slug": "blackbraid"
+    "slug": "blackbraid",
+    "country": "United States",
+    "genre": "Black Metal (with Native American folk elements)",
+    "label": "Independent",
+    "families": [
+      "Blackened Folk Metal"
+    ],
+    "themes": [
+      "Native American history",
+      "Indigenous resistance",
+      "Nature",
+      "Anti-Christianity"
+    ],
+    "status": "Active",
+    "location": "Adirondack Mountains, New York",
+    "ma_url": "https://www.metal-archives.com/bands/Blackbraid/3540511345",
+    "provisional": false
   },
   {
     "name": "Blighted Eye",
-    "slug": "blighted-eye"
+    "slug": "blighted-eye",
+    "country": "USA",
+    "genre": "Melodic Black Metal / Progressive Death Metal",
+    "label": "Beyond the Top Records",
+    "families": [
+      "Melodic Black Metal",
+      "Melodic Death Metal"
+    ],
+    "themes": [
+      "The darkest corners of the human psyche",
+      "Agony",
+      "Enmity"
+    ],
+    "status": "Active",
+    "location": "Seattle, Washington",
+    "ma_url": "https://www.metal-archives.com/bands/Blighted_Eye/3540476063",
+    "provisional": false
   },
   {
     "name": "Bloody Valkyria",
-    "slug": "bloody-valkyria"
+    "slug": "bloody-valkyria",
+    "country": "Finland",
+    "genre": "Epic/Melodic Black Metal",
+    "label": "Northern Silence Productions",
+    "families": [
+      "Epic Black Metal",
+      "Melodic Black Metal"
+    ],
+    "themes": [
+      "High fantasy",
+      "Latest album on decay",
+      "Loss and grief"
+    ],
+    "status": "Active",
+    "ma_url": "https://www.metal-archives.com/bands/Bloody_Valkyria/3540541497",
+    "provisional": false
   },
   {
     "name": "Darconigan",
-    "slug": "darconigan"
+    "slug": "darconigan",
+    "country": "United States",
+    "genre": "Melodic Black/Death Metal",
+    "label": "Independent",
+    "families": [
+      "Melodic Black Metal",
+      "Melodic Death Metal"
+    ],
+    "themes": [
+      "Colorado mountain myths and untold tales",
+      "Facing the darkness within one's soul"
+    ],
+    "status": "Active",
+    "location": "Rye, Colorado (Wet Mountains)",
+    "ma_url": "https://www.metal-archives.com/bands/Darconigan/3540511720",
+    "provisional": false
   },
   {
     "name": "Desoration",
-    "slug": "desoration"
+    "slug": "desoration",
+    "country": "New Zealand",
+    "genre": "Melodic Death Metal with symphonic black elements",
+    "label": "Independent",
+    "families": [
+      "Melodic Death Metal"
+    ],
+    "themes": [],
+    "status": "Active",
+    "location": "Christchurch",
+    "ma_url": "https://www.metal-archives.com/bands/Desoration/3540556343",
+    "provisional": false
   },
   {
     "name": "Dordeduh",
-    "slug": "dordeduh"
+    "slug": "dordeduh",
+    "country": "Romania",
+    "genre": "Atmospheric/Progressive Folk Black Metal",
+    "label": "Prophecy Productions",
+    "families": [
+      "Blackened Folk Metal"
+    ],
+    "themes": [
+      "Romanian folklore",
+      "Mysticism",
+      "Spirituality",
+      "Nature"
+    ],
+    "status": "Active",
+    "location": "Timișoara (unverified)",
+    "ma_url": "https://www.metal-archives.com/bands/Dordeduh/3540313662",
+    "provisional": false
   },
   {
     "name": "Dzhatinga",
-    "slug": "dzhatinga"
+    "slug": "dzhatinga",
+    "country": "Belarus",
+    "genre": "Death Metal / Deathcore with groove elements (MA wording unverified)",
+    "label": "Independent",
+    "themes": [
+      "Dark theatrical tales: predators",
+      "Vampirism"
+    ],
+    "status": "Active",
+    "location": "Minsk",
+    "ma_url": "https://www.metal-archives.com/bands/Dzhatinga/3540537540",
+    "provisional": false
   },
   {
     "name": "Eldfaerd",
-    "slug": "eldfaerd"
+    "slug": "eldfaerd",
+    "country": "Sweden",
+    "genre": "Symphonic Folk Metal",
+    "label": "Independent",
+    "families": [
+      "Blackened Folk Metal"
+    ],
+    "themes": [
+      "Norse sagas",
+      "Scandinavian folklore",
+      "Mythical creatures"
+    ],
+    "status": "Active",
+    "location": "Östersund, Jämtland",
+    "ma_url": "https://www.metal-archives.com/bands/Eldfaerd/3540517375",
+    "provisional": false
   },
   {
     "name": "Ephemerald",
-    "slug": "ephemerald"
+    "slug": "ephemerald",
+    "country": "Finland",
+    "genre": "Symphonic Melodic Death Metal",
+    "label": "Inverse Records",
+    "families": [
+      "Melodic Death Metal"
+    ],
+    "themes": [
+      "New beginnings",
+      "Breaking free from the past",
+      "Living in the moment"
+    ],
+    "status": "Active",
+    "location": "Unknown (Finland)",
+    "ma_url": "https://www.metal-archives.com/bands/Ephemerald/3540447283",
+    "provisional": false
   },
   {
     "name": "Evnen",
-    "slug": "evnen"
+    "slug": "evnen",
+    "country": "Spain",
+    "genre": "Blackened Death Metal (per Metal Kingdom; MA genre unverified)",
+    "label": "Independent",
+    "families": [
+      "Blackened Death Metal"
+    ],
+    "themes": [
+      "Mental illness",
+      "Madness",
+      "The mind"
+    ],
+    "status": "Active",
+    "location": "Barcelona",
+    "ma_url": "https://www.metal-archives.com/bands/Evnen/3540402436",
+    "provisional": false
   },
   {
     "name": "Evocatus",
-    "slug": "evocatus"
+    "slug": "evocatus",
+    "country": "Australia",
+    "genre": "Melodic Death Metal",
+    "label": "Wormholedeath",
+    "families": [
+      "Melodic Death Metal"
+    ],
+    "themes": [
+      "Fate",
+      "Mythology",
+      "Warfare",
+      "Ancient history"
+    ],
+    "status": "Active",
+    "location": "Hunter Valley, New South Wales",
+    "ma_url": "https://www.metal-archives.com/bands/Evocatus/3540383327",
+    "provisional": false
   },
   {
     "name": "Faidra",
-    "slug": "faidra"
+    "slug": "faidra",
+    "country": "Sweden",
+    "genre": "Atmospheric Black Metal",
+    "label": "Northern Silence Productions",
+    "families": [
+      "Epic Black Metal"
+    ],
+    "themes": [
+      "Not stated"
+    ],
+    "status": "Active",
+    "ma_url": "https://www.metal-archives.com/bands/Faidra/3540461589",
+    "provisional": false
   },
   {
     "name": "Finrir",
-    "slug": "finrir"
+    "slug": "finrir",
+    "country": "Finland",
+    "genre": "Viking/Death Metal",
+    "label": "Independent",
+    "families": [
+      "Melodic Death Metal"
+    ],
+    "themes": [
+      "Vikings",
+      "Norse mythology",
+      "Battle"
+    ],
+    "status": "Active",
+    "location": "Finland (city unverified)",
+    "ma_url": "https://www.metal-archives.com/bands/Finrir/3540519367",
+    "provisional": false
   },
   {
     "name": "Fires in the Distance",
-    "slug": "fires-in-the-distance"
+    "slug": "fires-in-the-distance",
+    "country": "USA",
+    "genre": "Melodic Death/Doom Metal",
+    "label": "Prosthetic Records",
+    "families": [
+      "Melodic Death Metal"
+    ],
+    "themes": [
+      "Nature",
+      "Melancholy",
+      "Loss"
+    ],
+    "status": "Active",
+    "location": "Connecticut (unverified)",
+    "ma_url": "https://www.metal-archives.com/bands/Fires_in_the_Distance/3540474086",
+    "provisional": false
   },
   {
     "name": "Flamen",
-    "slug": "flamen"
+    "slug": "flamen",
+    "country": "Italy",
+    "genre": "Pagan Black Metal",
+    "label": "Hass Weg Productions",
+    "families": [
+      "Blackened Folk Metal"
+    ],
+    "themes": [
+      "Paganism",
+      "Heathen pride",
+      "Post-apocalyptic themes"
+    ],
+    "status": "Unknown",
+    "location": "Unknown (Italy)",
+    "ma_url": "https://www.metal-archives.com/bands/Flamen/3540359006",
+    "provisional": true
   },
   {
     "name": "Frozen Soul",
-    "slug": "frozen-soul"
+    "slug": "frozen-soul",
+    "country": "United States",
+    "genre": "Death Metal",
+    "label": "Century Media Records",
+    "themes": [
+      "Ice",
+      "Winter",
+      "War",
+      "Death"
+    ],
+    "status": "Active",
+    "location": "Fort Worth, Texas",
+    "ma_url": "https://www.metal-archives.com/bands/Frozen_Soul/3540450365",
+    "provisional": false
   },
   {
     "name": "Gjallarhorn",
-    "slug": "gjallarhorn"
+    "slug": "gjallarhorn",
+    "country": "Ukraine",
+    "genre": "Folk/Pagan Black Metal (MA wording unverified)",
+    "label": "Independent",
+    "families": [
+      "Blackened Folk Metal"
+    ],
+    "themes": [
+      "Slavic paganism",
+      "Kyivan Rus' history",
+      "Winter"
+    ],
+    "status": "Active",
+    "ma_url": "https://www.metal-archives.com/bands/Gjallarhorn/84947",
+    "provisional": true
   },
   {
     "name": "Graufar",
-    "slug": "graufar"
+    "slug": "graufar",
+    "country": "Austria",
+    "genre": "Blackened Death Metal",
+    "label": "Independent",
+    "families": [
+      "Blackened Death Metal"
+    ],
+    "themes": [
+      "Social criticism",
+      "Darker side of human nature",
+      "Transience",
+      "Death"
+    ],
+    "status": "Active",
+    "ma_url": "https://www.metal-archives.com/bands/Graufar/3540540876",
+    "provisional": false
   },
   {
     "name": "Griffon",
-    "slug": "griffon"
+    "slug": "griffon",
+    "country": "France",
+    "genre": "Black Metal (melodic)",
+    "label": "Les Acteurs de l'Ombre Productions",
+    "families": [
+      "Melodic Black Metal"
+    ],
+    "themes": [
+      "Religion and power",
+      "History",
+      "Spiritual vs. temporal authority",
+      "Death of paganism"
+    ],
+    "status": "Active",
+    "location": "Paris (unverified)",
+    "ma_url": "https://www.metal-archives.com/bands/Griffon/3540387441",
+    "provisional": true
   },
   {
     "name": "Heidnir",
-    "slug": "heidnir"
+    "slug": "heidnir",
+    "country": "Austria",
+    "genre": "Black Metal (heroic/epic with folk undertones, choirs, atmospheric passages)",
+    "label": "Independent",
+    "families": [
+      "Epic Black Metal",
+      "Blackened Folk Metal"
+    ],
+    "themes": [
+      "Occultism",
+      "Cosmos"
+    ],
+    "status": "Active",
+    "ma_url": "https://www.metal-archives.com/bands/Heidnir/3540452728",
+    "provisional": false
   },
   {
     "name": "Horn",
-    "slug": "horn"
+    "slug": "horn",
+    "country": "Germany",
+    "genre": "Pagan Black/Folk Metal (MA wording unverified)",
+    "label": "Northern Silence Productions",
+    "families": [
+      "Blackened Folk Metal"
+    ],
+    "themes": [
+      "Nature",
+      "History",
+      "War"
+    ],
+    "status": "Active",
+    "location": "North Rhine-Westphalia (Paderborn area, unverified)",
+    "ma_url": "https://www.metal-archives.com/bands/Horn/17452",
+    "provisional": true
   },
   {
     "name": "Ildaruni",
-    "slug": "ildaruni"
+    "slug": "ildaruni",
+    "country": "Armenia",
+    "genre": "Pagan/Atmospheric Black Metal",
+    "label": "Black Lion Records",
+    "families": [
+      "Blackened Folk Metal"
+    ],
+    "themes": [
+      "Armenian history and mythology",
+      "Ancient mystery cults",
+      "Mithraism",
+      "Gnosticism"
+    ],
+    "status": "Active",
+    "location": "Yerevan",
+    "ma_url": "https://www.metal-archives.com/bands/Ildaruni/3540442481",
+    "provisional": false
   },
   {
     "name": "Inpathos",
-    "slug": "inpathos"
+    "slug": "inpathos",
+    "country": "United States",
+    "genre": "Melodic Death Metal",
+    "label": "Independent",
+    "families": [
+      "Melodic Death Metal"
+    ],
+    "themes": [
+      "Cosmic and spiritual themes"
+    ],
+    "status": "Active",
+    "location": "Bellingham, Washington",
+    "ma_url": "https://www.metal-archives.com/bands/Inpathos/3540470116",
+    "provisional": false
   },
   {
     "name": "Insomnium",
-    "slug": "insomnium"
+    "slug": "insomnium",
+    "country": "Finland",
+    "genre": "Melodic Death Metal",
+    "label": "Century Media Records",
+    "families": [
+      "Melodic Death Metal"
+    ],
+    "themes": [
+      "Melancholy",
+      "Loneliness",
+      "Death",
+      "Nature",
+      "Finnish folklore"
+    ],
+    "status": "Active",
+    "location": "Joensuu, North Karelia",
+    "ma_url": "https://www.metal-archives.com/bands/Insomnium/2332",
+    "provisional": false
   },
   {
     "name": "Into Eternity",
-    "slug": "into-eternity"
+    "slug": "into-eternity",
+    "country": "Canada",
+    "genre": "Progressive Melodic Death/Power Metal",
+    "label": "M-Theory Audio",
+    "families": [
+      "Melodic Death Metal"
+    ],
+    "themes": [
+      "Death",
+      "Loss",
+      "Grief",
+      "Depression"
+    ],
+    "status": "Active",
+    "location": "Regina, Saskatchewan",
+    "ma_url": "https://www.metal-archives.com/bands/Into_Eternity/613",
+    "provisional": false
   },
   {
     "name": "Iotunn",
-    "slug": "iotunn"
+    "slug": "iotunn",
+    "country": "Denmark",
+    "genre": "Progressive Power/Melodic Death Metal (MA wording unverified)",
+    "label": "Metal Blade Records",
+    "families": [
+      "Melodic Death Metal"
+    ],
+    "themes": [
+      "Cosmos",
+      "Sci-fi voyages",
+      "Kinship follows a prehistoric tribe"
+    ],
+    "status": "Active",
+    "location": "Copenhagen (Danish/Faroese line-up)",
+    "ma_url": "https://www.metal-archives.com/bands/Iotunn/3540408017",
+    "provisional": false
   },
   {
     "name": "Khepra",
-    "slug": "khepra"
+    "slug": "khepra",
+    "country": "Turkey",
+    "genre": "Symphonic Death Metal",
+    "label": "Theogonia Records",
+    "families": [
+      "Melodic Death Metal"
+    ],
+    "themes": [
+      "Mysticism",
+      "Sacred vs. profane",
+      "Sin",
+      "Faith/wrath"
+    ],
+    "status": "Active",
+    "location": "Anatolia (city unverified)",
+    "ma_url": "https://www.metal-archives.com/bands/khepra/3540412844",
+    "provisional": true
   },
   {
     "name": "Koviria",
-    "slug": "koviria"
+    "slug": "koviria",
+    "country": "United States",
+    "genre": "Folk Metal / Atmospheric Black Metal",
+    "label": "Northern Void Records",
+    "families": [
+      "Blackened Folk Metal"
+    ],
+    "themes": [
+      "Solace in nature and community"
+    ],
+    "status": "Active",
+    "location": "Unknown (US)",
+    "ma_url": "https://www.metal-archives.com/bands/Koviria/3540522828",
+    "provisional": false
   },
   {
     "name": "Kteis",
-    "slug": "kteis"
+    "slug": "kteis",
+    "country": "Ecuador",
+    "genre": "Black/Doom Metal",
+    "label": "Evil Domain Productions / Wolfgang Records",
+    "themes": [
+      "Cycle of life and death",
+      "Creation",
+      "Transcendence",
+      "Physical vs spiritual worlds"
+    ],
+    "status": "Active",
+    "location": "Quito",
+    "ma_url": "https://www.metal-archives.com/bands/Kteis/3540546784",
+    "provisional": true
   },
   {
     "name": "Kvaen",
-    "slug": "kvaen"
+    "slug": "kvaen",
+    "country": "Sweden",
+    "genre": "Melodic Black/Death Metal",
+    "label": "Metal Blade Records",
+    "families": [
+      "Melodic Black Metal",
+      "Melodic Death Metal"
+    ],
+    "themes": [
+      "Darkness",
+      "Death",
+      "Fire",
+      "Nordic folklore"
+    ],
+    "status": "Active",
+    "location": "Luleå, Norrbotten",
+    "ma_url": "https://www.metal-archives.com/bands/Kvaen/3540463475",
+    "provisional": false
   },
   {
     "name": "Labyrinthus Stellarum",
-    "slug": "labyrinthus-stellarum"
+    "slug": "labyrinthus-stellarum",
+    "country": "Ukraine",
+    "genre": "Atmospheric Black Metal (cosmic, with electronics/synthwave)",
+    "label": "Archivist Records / Northern Silence Productions",
+    "families": [
+      "Melodic Black Metal"
+    ],
+    "themes": [
+      "Space",
+      "Cosmic sci-fi sagas",
+      "The Void",
+      "Exploration and desolation"
+    ],
+    "status": "Active",
+    "location": "Odesa",
+    "ma_url": "https://www.metal-archives.com/bands/Labyrinthus_Stellarum/3540522573",
+    "provisional": false
   },
   {
     "name": "Lazer Throne",
-    "slug": "lazer-throne"
+    "slug": "lazer-throne",
+    "country": "United States",
+    "genre": "Atmospheric Black Metal/Dungeon Synth",
+    "label": "Northern Silence Productions",
+    "families": [
+      "Epic Black Metal"
+    ],
+    "themes": [
+      "Cosmic/interstellar mythos",
+      "Fantasy lore"
+    ],
+    "status": "Active",
+    "location": "Arizona (Sonoran Desert)",
+    "ma_url": "https://www.metal-archives.com/bands/Lazer_Throne/3540564985",
+    "provisional": false
   },
   {
     "name": "Les Bâtards du Roi",
-    "slug": "les-batards-du-roi"
+    "slug": "les-batards-du-roi",
+    "country": "France",
+    "genre": "Melodic Black Metal",
+    "label": "Les Acteurs de l'Ombre Productions",
+    "families": [
+      "Melodic Black Metal"
+    ],
+    "themes": [
+      "Medieval history/fantasy",
+      "Exile",
+      "Chivalry",
+      "Death"
+    ],
+    "status": "Active",
+    "ma_url": "https://www.metal-archives.com/bands/Les_B%C3%A2tards_du_Roi/3540539938",
+    "provisional": false
   },
   {
     "name": "Liminal Shroud",
-    "slug": "liminal-shroud"
+    "slug": "liminal-shroud",
+    "country": "Canada",
+    "genre": "Atmospheric Black Metal",
+    "label": "Willowtip Records",
+    "families": [
+      "Melodic Black Metal"
+    ],
+    "themes": [
+      "Collapse",
+      "Rejection",
+      "Despair",
+      "Emptiness and solace",
+      "The coast"
+    ],
+    "status": "Active",
+    "location": "Victoria, British Columbia",
+    "ma_url": "https://www.metal-archives.com/bands/Liminal_Shroud/3540443524",
+    "provisional": false
   },
   {
     "name": "Lomsk",
-    "slug": "lomsk"
+    "slug": "lomsk",
+    "country": "Sweden",
+    "genre": "Black Metal (melodic/atmospheric)",
+    "label": "Vendetta Records",
+    "families": [
+      "Melodic Black Metal"
+    ],
+    "themes": [
+      "War",
+      "Tragedy",
+      "Despair",
+      "Rage"
+    ],
+    "status": "Active",
+    "location": "Gothenburg",
+    "ma_url": "https://www.metal-archives.com/bands/L%C3%B6msk/3540553520",
+    "provisional": true
   },
   {
     "name": "Maestitium",
-    "slug": "maestitium"
+    "slug": "maestitium",
+    "country": "Sweden",
+    "genre": "Melodic Death Metal (symphonic/epic)",
+    "label": "Black Lion Records",
+    "families": [
+      "Melodic Death Metal"
+    ],
+    "themes": [
+      "Corruption",
+      "Inner darkness",
+      "Death",
+      "Martyrdom",
+      "A fallen kingdom"
+    ],
+    "status": "Active",
+    "location": "Unknown (Sweden)",
+    "ma_url": "https://www.metal-archives.com/bands/Maestitium/3540481697",
+    "provisional": false
   },
   {
     "name": "Malphas",
-    "slug": "malphas"
+    "slug": "malphas",
+    "country": "Switzerland",
+    "genre": "Black Metal",
+    "label": "Soulseller Records",
+    "families": [
+      "Melodic Black Metal"
+    ],
+    "themes": [
+      "Cosmic chaos",
+      "Misanthropy",
+      "Death"
+    ],
+    "status": "Active",
+    "location": "Switzerland (city unverified)",
+    "ma_url": "https://www.metal-archives.com/bands/Malphas/3540394851",
+    "provisional": true
   },
   {
     "name": "Mgła",
-    "slug": "mga"
+    "slug": "mga",
+    "country": "Poland",
+    "genre": "Black Metal",
+    "label": "Northern Heritage Records / No Solace",
+    "families": [
+      "Melodic Black Metal"
+    ],
+    "themes": [
+      "Nihilism",
+      "Misanthropy",
+      "Futility",
+      "Death"
+    ],
+    "status": "Active",
+    "location": "Kraków",
+    "ma_url": "https://www.metal-archives.com/bands/Mg%C5%82a/44722",
+    "provisional": false
   },
   {
     "name": "Midnight Odyssey",
-    "slug": "midnight-odyssey"
+    "slug": "midnight-odyssey",
+    "country": "Australia",
+    "genre": "Atmospheric Black Metal / Ambient",
+    "label": "I, Voidhanger Records",
+    "families": [
+      "Melodic Black Metal",
+      "Epic Black Metal"
+    ],
+    "themes": [
+      "Space",
+      "Stars",
+      "Cosmos",
+      "Mythology",
+      "Death"
+    ],
+    "status": "Active",
+    "location": "Brisbane, Queensland",
+    "ma_url": "https://www.metal-archives.com/bands/Midnight_Odyssey/3540275343",
+    "provisional": false
   },
   {
     "name": "Moonlight Sorcery",
-    "slug": "moonlight-sorcery"
+    "slug": "moonlight-sorcery",
+    "country": "Finland",
+    "genre": "Melodic Black Metal (symphonic touches)",
+    "label": "Avantgarde Music",
+    "families": [
+      "Melodic Black Metal"
+    ],
+    "themes": [
+      "Fantasy",
+      "Night",
+      "Winter",
+      "Medieval/heroic atmosphere"
+    ],
+    "status": "Active",
+    "location": "Tampere",
+    "ma_url": "https://www.metal-archives.com/bands/Moonlight_Sorcery/3540502461",
+    "provisional": false
   },
   {
     "name": "Mordkaul",
-    "slug": "mordkaul"
+    "slug": "mordkaul",
+    "country": "Belgium",
+    "genre": "Death Metal",
+    "label": "Massacre Records",
+    "families": [
+      "Melodic Death Metal"
+    ],
+    "themes": [
+      "Violence",
+      "Misanthropy",
+      "Horror",
+      "Pyromania"
+    ],
+    "status": "Active",
+    "location": "Belgium (city unverified)",
+    "ma_url": "https://www.metal-archives.com/bands/Mordkaul/3540480724",
+    "provisional": false
   },
   {
     "name": "Mur",
-    "slug": "mur"
+    "slug": "mur",
+    "country": "Iceland",
+    "genre": "Progressive Metal / Post-Metal (atmospheric)",
+    "label": "Century Media Records",
+    "themes": [
+      "Blind faith",
+      "Illusions of liberation",
+      "Inner collapse/apocalypse"
+    ],
+    "status": "Active",
+    "location": "Reykjavík",
+    "ma_url": "https://www.metal-archives.com/bands/M%C3%BAr/3540513301",
+    "provisional": true
   },
   {
     "name": "Myr",
-    "slug": "myr"
+    "slug": "myr",
+    "country": "Norway",
+    "genre": "Black Metal",
+    "label": "Independent",
+    "families": [
+      "Melodic Black Metal"
+    ],
+    "themes": [
+      "Scandinavian legends",
+      "Northern folklore",
+      "Mysticism",
+      "Nordic wilderness"
+    ],
+    "status": "Active",
+    "ma_url": "https://www.metal-archives.com/bands/Myr/3540565718",
+    "provisional": true
   },
   {
     "name": "Null",
-    "slug": "null"
+    "slug": "null",
+    "country": "United States",
+    "genre": "Atmospheric Black Metal",
+    "label": "Of The North Records",
+    "families": [
+      "Melodic Black Metal"
+    ],
+    "themes": [
+      "Nature",
+      "Uplifting/mindful atmospheres",
+      "Medieval and fairy-tale imagery"
+    ],
+    "status": "Active",
+    "location": "Mineral, Virginia",
+    "ma_url": "https://www.metal-archives.com/bands/Null/3540345885",
+    "provisional": true
   },
   {
     "name": "Rackseed",
-    "slug": "rackseed"
+    "slug": "rackseed",
+    "country": "Portugal",
+    "genre": "Epic/brutal metal (no MA entry; Bandcamp: 'Brutal yet epic')",
+    "label": "Independent",
+    "themes": [
+      "Apocalypse",
+      "Human destruction"
+    ],
+    "status": "Active",
+    "provisional": false
   },
   {
     "name": "Rotting Christ",
-    "slug": "rotting-christ"
+    "slug": "rotting-christ",
+    "country": "Greece",
+    "genre": "Black Metal (early); Gothic Metal (mid); Melodic Black Metal (later)",
+    "label": "Season of Mist",
+    "families": [
+      "Melodic Black Metal"
+    ],
+    "themes": [
+      "Occultism",
+      "Mythology",
+      "Ancient cultures",
+      "Anti-religion"
+    ],
+    "status": "Active",
+    "location": "Athens, Attica",
+    "ma_url": "https://www.metal-archives.com/bands/Rotting_Christ/314",
+    "provisional": false
   },
   {
     "name": "Saor",
-    "slug": "saor"
+    "slug": "saor",
+    "country": "United Kingdom",
+    "genre": "Atmospheric Folk/Black Metal",
+    "label": "Season of Mist",
+    "families": [
+      "Blackened Folk Metal",
+      "Epic Black Metal"
+    ],
+    "themes": [
+      "Scottish nature",
+      "History",
+      "Folklore",
+      "Poetry"
+    ],
+    "status": "Active",
+    "location": "Glasgow, Scotland",
+    "ma_url": "https://www.metal-archives.com/bands/Saor/3540373234",
+    "provisional": false
   },
   {
     "name": "Scherbenwald",
-    "slug": "scherbenwald"
+    "slug": "scherbenwald",
+    "country": "Germany",
+    "genre": "Unknown (MA genre not retrievable; likely black metal, unverified)",
+    "label": "Independent",
+    "themes": [],
+    "status": "Unknown",
+    "location": "Münster, North Rhine-Westphalia",
+    "ma_url": "https://www.metal-archives.com/bands/Scherbenwald/3540476246",
+    "provisional": false
   },
   {
     "name": "Skuggor",
-    "slug": "skuggor"
+    "slug": "skuggor",
+    "country": "Sweden",
+    "genre": "Atmospheric Black Metal",
+    "label": "Nordvis Produktion",
+    "families": [
+      "Blackened Folk Metal"
+    ],
+    "themes": [
+      "Northern Swedish landscapes",
+      "Forests",
+      "Solitude",
+      "Introspection"
+    ],
+    "status": "Active",
+    "location": "Moskosel, Norrbotten (Swedish Lapland)",
+    "ma_url": "https://www.metal-archives.com/bands/Skuggor/3540513140",
+    "provisional": false
   },
   {
     "name": "Sparrows",
-    "slug": "sparrows"
+    "slug": "sparrows",
+    "country": "United States",
+    "genre": "Black/Death Metal",
+    "label": "Independent",
+    "families": [
+      "Blackened Death Metal"
+    ],
+    "themes": [
+      "Anti-religion",
+      "Apocalypse",
+      "Regret and nature"
+    ],
+    "status": "Active",
+    "location": "Dallas, Texas",
+    "ma_url": "https://www.metal-archives.com/bands/Sparrows/3540357734",
+    "provisional": true
   },
   {
     "name": "Sulphur Aeon",
-    "slug": "sulphur-aeon"
+    "slug": "sulphur-aeon",
+    "country": "Germany",
+    "genre": "Death Metal",
+    "label": "Ván Records",
+    "families": [
+      "Blackened Death Metal"
+    ],
+    "themes": [
+      "H.P. Lovecraft",
+      "Cthulhu Mythos",
+      "The sea"
+    ],
+    "status": "Active",
+    "location": "Ruhr area, North Rhine-Westphalia (unverified)",
+    "ma_url": "https://www.metal-archives.com/bands/Sulphur_Aeon/3540326674",
+    "provisional": false
   },
   {
     "name": "Summoning",
-    "slug": "summoning"
+    "slug": "summoning",
+    "country": "Austria",
+    "genre": "Atmospheric/Symphonic Black Metal (Epic Black Metal)",
+    "label": "Napalm Records",
+    "families": [
+      "Epic Black Metal"
+    ],
+    "themes": [
+      "J.R.R. Tolkien's Middle-earth",
+      "Fantasy",
+      "Battles"
+    ],
+    "status": "Active",
+    "location": "Vienna",
+    "ma_url": "https://www.metal-archives.com/bands/summoning/29",
+    "provisional": false
   },
   {
     "name": "Sviatibor",
-    "slug": "sviatibor"
+    "slug": "sviatibor",
+    "country": "France",
+    "genre": "Pagan Atmospheric Black Metal",
+    "label": "Independent",
+    "families": [
+      "Blackened Folk Metal"
+    ],
+    "themes": [
+      "Cycle of life and death",
+      "Ancestral transcendence",
+      "Nature",
+      "Slavic/pagan spirituality"
+    ],
+    "status": "Active",
+    "location": "unverified",
+    "ma_url": "https://www.metal-archives.com/bands/Sviatibor/3540373459",
+    "provisional": false
   },
   {
     "name": "Sworn",
-    "slug": "sworn"
+    "slug": "sworn",
+    "country": "Norway",
+    "genre": "Melodic Black Metal",
+    "label": "The Circle Music",
+    "families": [
+      "Melodic Black Metal"
+    ],
+    "themes": [
+      "Cosmic darkness",
+      "Nothingness",
+      "The fragility of existence"
+    ],
+    "status": "Active",
+    "location": "Bø i Telemark (unverified)",
+    "ma_url": "https://www.metal-archives.com/bands/Sworn/42338",
+    "provisional": true
   },
   {
     "name": "The Mist from the Mountain",
-    "slug": "the-mist-from-the-mountain"
+    "slug": "the-mist-from-the-mountain",
+    "country": "Finland",
+    "genre": "Atmospheric/Folk Black Metal",
+    "label": "Primitive Reaction",
+    "families": [
+      "Blackened Folk Metal",
+      "Melodic Black Metal"
+    ],
+    "themes": [
+      "Nature",
+      "The sea",
+      "Mythology",
+      "Sámi/northern folklore"
+    ],
+    "status": "Active",
+    "ma_url": "https://www.metal-archives.com/bands/The_Mist_from_the_Mountains/3540499899",
+    "provisional": false
   },
   {
     "name": "Thyrfing",
-    "slug": "thyrfing"
+    "slug": "thyrfing",
+    "country": "Sweden",
+    "genre": "Viking/Folk Metal",
+    "label": "Despotz Records",
+    "families": [
+      "Blackened Folk Metal"
+    ],
+    "themes": [
+      "Viking history",
+      "Norse mythology",
+      "Paganism"
+    ],
+    "status": "Active",
+    "location": "Stockholm",
+    "ma_url": "https://www.metal-archives.com/bands/Thyrfing/337",
+    "provisional": false
   },
   {
     "name": "Varmia",
-    "slug": "varmia"
+    "slug": "varmia",
+    "country": "Poland",
+    "genre": "Pagan Black Metal with Baltic folk/ritual music",
+    "label": "M-Theory Audio",
+    "families": [
+      "Blackened Folk Metal"
+    ],
+    "themes": [
+      "Pre-Christian Baltic beliefs",
+      "Ancestors",
+      "Warmia/Prussian heritage",
+      "Identity"
+    ],
+    "status": "Active",
+    "location": "Olsztyn, Warmian-Masurian",
+    "ma_url": "https://www.metal-archives.com/bands/Varmia/3540422761",
+    "provisional": false
   },
   {
     "name": "Varus",
-    "slug": "varus"
+    "slug": "varus",
+    "country": "Germany",
+    "genre": "Symphonic Folk/Melodic Death Metal",
+    "label": "Independent",
+    "families": [
+      "Melodic Death Metal"
+    ],
+    "themes": [
+      "Germanic history",
+      "Fantasy",
+      "Drinking songs"
+    ],
+    "status": "Active",
+    "location": "Bamberg, Bavaria",
+    "ma_url": "https://www.metal-archives.com/bands/Varus/3540401201",
+    "provisional": true
   },
   {
     "name": "Vinterblot",
-    "slug": "vinterblot"
+    "slug": "vinterblot",
+    "country": "Italy",
+    "genre": "Folk/Death Metal (Viking-themed)",
+    "label": "Nemeton Records",
+    "families": [
+      "Melodic Death Metal"
+    ],
+    "themes": [
+      "Norse mythology",
+      "Asgard",
+      "Battle"
+    ],
+    "status": "Active",
+    "location": "Bari, Apulia",
+    "ma_url": "https://www.metal-archives.com/bands/Vinterblot/3540315387",
+    "provisional": false
   },
   {
     "name": "Vredehammer",
-    "slug": "vredehammer"
+    "slug": "vredehammer",
+    "country": "Norway",
+    "genre": "Black/Death Metal (blackened death, industrial touches)",
+    "label": "Indie Recordings",
+    "families": [
+      "Blackened Death Metal"
+    ],
+    "themes": [
+      "Stephen King stories",
+      "War",
+      "Dark fantasy and myth",
+      "The state of the world"
+    ],
+    "status": "Active",
+    "location": "Northern Norway",
+    "ma_url": "https://www.metal-archives.com/bands/Vredehammer/3540305432",
+    "provisional": false
   },
   {
     "name": "Walg",
-    "slug": "walg"
+    "slug": "walg",
+    "country": "Netherlands",
+    "genre": "Melodic Black Metal",
+    "label": "Independent",
+    "families": [
+      "Melodic Black Metal"
+    ],
+    "themes": [
+      "Suffering",
+      "Melancholy",
+      "Folk tales",
+      "Superstition",
+      "Witchcraft"
+    ],
+    "status": "Active",
+    "location": "Netherlands (Groningen area, unverified)",
+    "ma_url": "https://www.metal-archives.com/bands/Walg/3540490981",
+    "provisional": false
   },
   {
     "name": "Warfarer",
-    "slug": "warfarer"
+    "slug": "warfarer",
+    "country": "Finland",
+    "genre": "Melodic Death / Folk Metal (symphonic elements)",
+    "label": "Inverse Records",
+    "families": [
+      "Melodic Death Metal"
+    ],
+    "themes": [],
+    "status": "Active",
+    "location": "Northern Finland",
+    "ma_url": "https://www.metal-archives.com/bands/Warfarer/3540462212",
+    "provisional": false
   },
   {
     "name": "Wayfarer",
-    "slug": "wayfarer"
+    "slug": "wayfarer",
+    "country": "United States",
+    "genre": "Black Metal (Western/Americana-influenced)",
+    "label": "Vesperian",
+    "families": [
+      "Melodic Black Metal"
+    ],
+    "themes": [
+      "American West mythology",
+      "The West as haunted landscape",
+      "Frontier violence"
+    ],
+    "status": "Active",
+    "location": "Denver, Colorado",
+    "ma_url": "https://www.metal-archives.com/bands/Wayfarer/3540349766",
+    "provisional": false
   },
   {
     "name": "Windthrow",
-    "slug": "windthrow"
+    "slug": "windthrow",
+    "country": "Sweden",
+    "genre": "Black/Heavy Metal (MA wording unverified)",
+    "label": "Independent",
+    "families": [
+      "Melodic Black Metal"
+    ],
+    "themes": [
+      "Nature",
+      "Norse mythology"
+    ],
+    "status": "Active",
+    "ma_url": "https://www.metal-archives.com/bands/Windthrow/3540453547",
+    "provisional": false
   },
   {
     "name": "Wolfheart",
-    "slug": "wolfheart"
+    "slug": "wolfheart",
+    "country": "Finland",
+    "genre": "Melodic Death Metal",
+    "label": "Napalm Records",
+    "families": [
+      "Melodic Death Metal"
+    ],
+    "themes": [
+      "Winter",
+      "Nature",
+      "War",
+      "Finnish history"
+    ],
+    "status": "Active",
+    "location": "Lahti, Päijät-Häme",
+    "ma_url": "https://www.metal-archives.com/bands/Wolfheart/3540371106",
+    "provisional": false
   },
   {
     "name": "Wormlight",
-    "slug": "wormlight"
+    "slug": "wormlight",
+    "country": "Sweden",
+    "genre": "Melodic Black Metal",
+    "label": "Black Lion Records",
+    "families": [
+      "Melodic Black Metal"
+    ],
+    "themes": [
+      "Occultism",
+      "Darkness",
+      "The 'unholy feminine'"
+    ],
+    "status": "Active",
+    "location": "Sweden (city unverified)",
+    "ma_url": "https://www.metal-archives.com/bands/Wormlight/3540379839",
+    "provisional": false
   },
   {
     "name": "Wormwood",
-    "slug": "wormwood"
+    "slug": "wormwood",
+    "country": "Sweden",
+    "genre": "Melodic Black Metal",
+    "label": "Black Lodge Records",
+    "families": [
+      "Melodic Black Metal"
+    ],
+    "themes": [
+      "History",
+      "Nordic famine",
+      "Decline of humanity",
+      "Cosmic end"
+    ],
+    "status": "Active",
+    "location": "Stockholm",
+    "ma_url": "https://www.metal-archives.com/bands/Wormwood/3540393908",
+    "provisional": true
   },
   {
     "name": "Yoth Iria",
-    "slug": "yoth-iria"
+    "slug": "yoth-iria",
+    "country": "Greece",
+    "genre": "Black Metal (Hellenic melodic black metal)",
+    "label": "Metal Blade Records",
+    "families": [
+      "Melodic Black Metal"
+    ],
+    "themes": [
+      "Dark mysticism",
+      "Occultism",
+      "Hellenic spirituality"
+    ],
+    "status": "Active",
+    "location": "Athens (unverified)",
+    "ma_url": "https://www.metal-archives.com/bands/Yoth_Iria/3540451390",
+    "provisional": false
   },
   {
     "name": "Zakaz",
-    "slug": "zakaz"
+    "slug": "zakaz",
+    "country": "Iceland (unverified; not stated in any source reached)",
+    "genre": "Black Metal (ritualistic)",
+    "label": "Independent",
+    "families": [
+      "Melodic Black Metal"
+    ],
+    "themes": [
+      "Ancestral memory",
+      "Solar and proto-Norse symbolism",
+      "Cultural decay",
+      "Psychospiritual collapse",
+      "Suicide",
+      "Darkness"
+    ],
+    "status": "Active",
+    "ma_url": "https://www.metal-archives.com/bands/Zakaz/3540406701",
+    "provisional": true
   }
 ];

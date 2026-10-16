@@ -6,7 +6,7 @@ Usage: python3 scripts/build_data.py path/to/bands.csv
 Column names are matched loosely (case-insensitive). Recognised columns:
   name|band, country|nationality, genre, label|current_label, family|families|genre_family,
   themes|lyrical_themes, status, formed|formed_in, location, url|ma_url|metallum_url,
-  bandcamp, website, image, summary, featured
+  bandcamp, website, image, summary, featured, ambiguous|provisional
 Multi-value cells (families, themes) may be separated by ';' or '|'. Themes also accept ','.
 Existing fields in data/bands.js that the CSV leaves blank are kept.
 """
@@ -31,7 +31,30 @@ ALIASES = {
     "image": ["image"],
     "summary": ["summary", "bio", "notes_public"],
     "featured": ["featured"],
+    "provisional": ["ambiguous", "provisional"],
 }
+
+def clean_label(v):
+    # "Indie Recordings (latest album); 2026 singles self-released" -> "Indie Recordings"
+    v = re.sub(r"\s*\([^)]*\)", "", v)
+    return v.split(";")[0].strip()
+
+def clean_themes(v):
+    # Drop research notes in brackets, normalise case, de-duplicate, skip sentence-length entries.
+    v = re.sub(r"\s*[\(\[][^\)\]]*[\)\]]?", "", v)
+    out, seen = [], set()
+    for t in split(v, commas=True):
+        t = t.strip(" .-")
+        if not t or len(t) > 40 or t.lower() in ("unknown", "n/a", "unverified"):
+            continue
+        t = t[0].upper() + t[1:]
+        if t.lower() not in seen:
+            seen.add(t.lower())
+            out.append(t)
+    return out
+
+def clean_status(v):
+    return re.sub(r"\s*\([^)]*\)", "", v).strip()
 
 def slugify(s):
     s = unicodedata.normalize("NFD", s).encode("ascii", "ignore").decode()
@@ -70,9 +93,13 @@ def main(path):
                 if key == "families":
                     b[key] = split(raw)
                 elif key == "themes":
-                    b[key] = split(raw, commas=True)
-                elif key == "featured":
+                    b[key] = clean_themes(raw)
+                elif key in ("featured", "provisional"):
                     b[key] = raw.lower() in ("1", "true", "yes", "y")
+                elif key == "label":
+                    b[key] = clean_label(raw)
+                elif key == "status":
+                    b[key] = clean_status(raw)
                 else:
                     b[key] = raw
             existing[slug] = b

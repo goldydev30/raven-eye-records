@@ -212,6 +212,7 @@
       (b.formed ? "<div><dt>Formed</dt><dd>" + esc(b.formed) + "</dd></div>" : "") +
       (b.status ? "<div><dt>Status</dt><dd>" + esc(b.status) + "</dd></div>" : "") +
       "</dl>" +
+      (b.provisional ? '<p class="pending">Several bands share this name; we are still confirming this is the right one.</p>' : "") +
       '<div class="btn-row"><a class="btn blood" href="' + esc(maUrl(b)) + '" target="_blank" rel="noopener">Encyclopaedia Metallum</a>' +
       (b.bandcamp ? '<a class="btn" href="' + esc(b.bandcamp) + '" target="_blank" rel="noopener">Bandcamp</a>' : "") +
       (b.website ? '<a class="btn" href="' + esc(b.website) + '" target="_blank" rel="noopener">Official site</a>' : "") +
@@ -246,15 +247,21 @@
       bands().forEach(function (b) { (b.themes || []).forEach(function (t) { (map[t] = map[t] || []).push(b); }); });
       var keys = Object.keys(map).sort(function (a, b) { return map[b].length - map[a].length || a.localeCompare(b); });
       var want = new URLSearchParams(location.search).get("theme");
+      var common = keys.filter(function (k) { return map[k].length > 1; });
       var bar = document.getElementById("theme-filter");
       function draw(active) {
         if (bar) bar.innerHTML = '<button class="tag" aria-pressed="' + (!active) + '" data-t="">All</button>' +
-          keys.map(function (k) { return '<button class="tag" aria-pressed="' + (k === active) + '" data-t="' + esc(k) + '">' + esc(k) + "</button>"; }).join("");
-        var shown = active ? [active] : keys;
-        themesEl.innerHTML = shown.length ? shown.map(function (k) {
+          common.map(function (k) { return '<button class="tag" aria-pressed="' + (k === active) + '" data-t="' + esc(k) + '">' + esc(k) + "</button>"; }).join("");
+        var shown = active ? [active] : common;
+        var rare = active ? [] : keys.filter(function (k) { return map[k].length < 2; });
+        themesEl.innerHTML = (shown.length ? shown.map(function (k) {
           return '<div class="theme-card"><h3>' + esc(k) + "<small>" + map[k].length + (map[k].length === 1 ? " artist" : " artists") + "</small></h3><ul>" +
             map[k].map(function (b) { return '<li><a href="' + bandUrl(b) + '">' + esc(b.name) + "</a></li>"; }).join("") + "</ul></div>";
-        }).join("") : '<p class="pending">Themes appear here as each artist\'s lyrical themes are catalogued.</p>';
+        }).join("") : '<p class="pending">Themes appear here as each artist\'s lyrical themes are catalogued.</p>') +
+          (rare.length ? '<div class="theme-card" style="grid-column:1/-1"><h3>Also sung of</h3><ul>' +
+            rare.sort(function (a, b) { return a.localeCompare(b); }).map(function (k) {
+              return '<li><a href="' + bandUrl(map[k][0]) + '">' + esc(k) + '</a> <span class="muted">(' + esc(map[k][0].name) + ")</span></li>";
+            }).join("") + "</ul></div>" : "");
       }
       if (bar) bar.addEventListener("click", function (ev) {
         var t = ev.target.closest("button"); if (!t) return;
