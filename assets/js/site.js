@@ -18,6 +18,7 @@
     ["index.html", "Home"],
     ["roster.html", "Artists"],
     ["lyrics.html", "Lyrics Compendium"],
+    ["arsenal.html", "Arsenal"],
     ["news.html", "News"],
     ["about.html", "About"],
     ["submit.html", "Demos"]
@@ -227,8 +228,69 @@
         '" target="_blank" rel="noopener">Encyclopaedia Metallum</a>. Raven Eye publishes lyric excerpts and commentary here only with the band\'s permission.</p>') +
       "</div></section>" +
 
+      arsenalSection(b) +
+
       (related.length ? '<section class="block"><div class="wrap"><div class="section-head"><h2>Kindred spirits</h2><a class="more" href="roster.html">Full roster</a></div>' +
         '<div class="grid bands">' + related.map(bandCard).join("") + "</div></div></section>" : "");
+    if (location.hash) { var t = document.getElementById(location.hash.slice(1)); if (t) t.scrollIntoView(); }
+  }
+
+  /* ---------- gear ---------- */
+  var REPO = "https://github.com/goldydev30/raven-eye-records";
+  var REL = {
+    endorsement: ["Endorsed", "blood"],
+    signature_model: ["Signature model", "blood"],
+    seen_using: ["Seen using", ""],
+    fan_submitted: ["Fan submitted", ""]
+  };
+  function gearFor(b) { return (window.RER_GEAR || {})[b.slug] || []; }
+  function submitGearUrl(b) {
+    return REPO + "/issues/new?template=gear-submission.yml" + (b ? "&title=" + encodeURIComponent("[Gear] " + b.name) + "&band=" + encodeURIComponent(b.name) : "");
+  }
+  function gearItem(g) {
+    var rel = REL[g.relationship] || REL.seen_using;
+    return '<li class="gear-item"><span class="gear-cat">' + esc(g.category) + "</span>" +
+      '<span class="gear-name"><strong>' + esc(g.brand) + "</strong> " + esc(g.model) + "</span>" +
+      '<span class="gear-meta"><span class="tag ' + rel[1] + '">' + rel[0] + "</span>" +
+      (g.confidence === "low" ? '<span class="tag">Unconfirmed</span>' : "") +
+      (g.source ? '<a href="' + esc(g.source) + '" target="_blank" rel="noopener">Source</a>' : "") + "</span></li>";
+  }
+  function arsenalSection(b) {
+    var gear = gearFor(b);
+    var byMember = {};
+    gear.forEach(function (g) {
+      var k = (g.member || "Band") + (g.role ? " \u00b7 " + g.role : "");
+      (byMember[k] = byMember[k] || []).push(g);
+    });
+    return '<section class="block" id="gear"><div class="wrap"><div class="section-head"><div><span class="eyebrow">A musician\'s armour</span><h2>The Arsenal</h2></div>' +
+      '<a class="more" href="' + submitGearUrl(b) + '" target="_blank" rel="noopener">Submit gear</a></div>' +
+      (gear.length
+        ? '<div class="grid three">' + Object.keys(byMember).map(function (m) {
+            return '<div class="panel"><h3>' + esc(m) + '</h3><ul class="gear-list">' + byMember[m].map(gearItem).join("") + "</ul></div>";
+          }).join("") + "</div>"
+        : '<p class="muted">No rig information catalogued yet. Seen them live or in a playthrough? <a href="' + submitGearUrl(b) + '" target="_blank" rel="noopener">Tell us what they play</a>.</p>') +
+      "</div></section>";
+  }
+  function renderArsenal() {
+    var el = document.getElementById("arsenal");
+    if (!el) return;
+    var withGear = bands().filter(function (b) { return gearFor(b).length; });
+    var brands = {};
+    withGear.forEach(function (b) { gearFor(b).forEach(function (g) { if (g.brand && !/^unknown$/i.test(g.brand)) (brands[g.brand] = brands[g.brand] || {})[b.slug] = b; }); });
+    var top = Object.keys(brands).sort(function (a, b) { return Object.keys(brands[b]).length - Object.keys(brands[a]).length || a.localeCompare(b); });
+    el.innerHTML =
+      '<div class="section-head"><h2>Armouries by band</h2><span class="count">' + withGear.length + " bands catalogued</span></div>" +
+      '<div class="grid bands">' + withGear.map(function (b) {
+        var g = gearFor(b), endorsed = g.filter(function (x) { return x.relationship === "endorsement" || x.relationship === "signature_model"; });
+        return '<a class="band-card" href="' + bandUrl(b) + '#gear"><div class="art" style="' + artStyle(b.name) + '"><span>' + esc(initial(b.name)) + "</span></div>" +
+          '<div class="body"><h3>' + esc(b.name) + '</h3><div class="meta">' + g.length + (g.length === 1 ? " piece" : " pieces") + (endorsed.length ? " &middot; " + endorsed.length + " endorsed" : "") + "</div></div></a>";
+      }).join("") + "</div>" +
+      '<hr class="rule"><h2>Forges</h2><p class="muted">The makers behind the roster\'s rigs.</p>' +
+      top.map(function (br) {
+        var bs = Object.keys(brands[br]).map(function (k) { return brands[br][k]; });
+        return '<span class="tag" title="' + esc(bs.map(function (x) { return x.name; }).join(", ")) + '">' + esc(br) + " &middot; " + bs.length + "</span>";
+      }).join("");
+    document.querySelectorAll("[data-submit-gear]").forEach(function (a) { a.href = submitGearUrl(); });
   }
 
   function codexEntry(e) {
@@ -294,6 +356,7 @@
     renderBand();
     renderLyrics();
     renderNews("news-list");
+    renderArsenal();
   });
 
   window.RER = { slugify: slugify, esc: esc };

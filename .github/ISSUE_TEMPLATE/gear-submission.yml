@@ -1,0 +1,90 @@
+name: Submit a band's gear
+description: Tell Raven Eye Records what a musician plays. Every submission is reviewed before it goes on the site.
+title: "[Gear] "
+labels: ["gear-submission"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for adding to **The Arsenal**. Include a photo or a link so we can check it. Approved entries appear on the band's page marked *Fan submitted*.
+  - type: input
+    id: band
+    attributes:
+      label: Band
+      placeholder: e.g. Insomnium
+    validations:
+      required: true
+  - type: input
+    id: musician
+    attributes:
+      label: Musician
+      description: Who plays it? Leave blank if you're not sure.
+      placeholder: e.g. Markus Vanhala
+  - type: dropdown
+    id: role
+    attributes:
+      label: Role
+      options:
+        - Guitar
+        - Bass
+        - Drums
+        - Vocals
+        - Keyboards / synths
+        - Other
+    validations:
+      required: true
+  - type: dropdown
+    id: category
+    attributes:
+      label: Type of gear
+      options:
+        - Guitar
+        - Bass
+        - Amp / cabinet
+        - Effects / pedals
+        - Pickups
+        - Strings
+        - Drums / hardware
+        - Cymbals
+        - Microphone
+        - Keyboard / synth
+        - Other
+    validations:
+      required: true
+  - type: input
+    id: gear
+    attributes:
+      label: Brand and model
+      placeholder: e.g. ESP Eclipse-II, Kemper Profiler Stage
+    validations:
+      required: true
+  - type: dropdown
+    id: relationship
+    attributes:
+      label: How do you know?
+      options:
+        - Seen it on stage or in a video
+        - The band or musician said so in an interview or post
+        - Official endorsement or artist page from the brand
+        - It's a signature model
+    validations:
+      required: true
+  - type: textarea
+    id: proof
+    attributes:
+      label: Photo or link
+      description: Paste a link (video with timestamp, interview, brand artist page) or drag a photo in here.
+    validations:
+      required: true
+  - type: textarea
+    id: notes
+    attributes:
+      label: Anything else
+      description: Tour, year, album, or details like tunings and settings.
+  - type: checkboxes
+    id: confirm
+    attributes:
+      label: Confirm
+      options:
+        - label: The photo is mine or the link is public, and I'm happy for Raven Eye Records to publish this information.
+          required: true
