@@ -6,7 +6,7 @@ body:
   - type: markdown
     attributes:
       value: |
-        Thanks for adding to **The Arsenal**. Include a photo or a link so we can check it. Approved entries appear on the band's page marked *Fan submitted*.
+        Thanks for adding to **The Armory**. Include a photo or a link so we can check it. Approved entries appear on the band's page marked *Fan submitted*.
   - type: input
     id: band
     attributes:

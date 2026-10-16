@@ -16,7 +16,7 @@ python3 -m http.server 8000
 | `roster.html` | All artists, searchable and filterable by country, genre family and label |
 | `band.html?b=<slug>` | Artist page: country, genre, current label, lyrical themes, Metallum link, kindred bands |
 | `lyrics.html` | Lyrics Codex: themes atlas plus lyric excerpts and commentary |
-| `arsenal.html` | The Arsenal: gear behind the roster, with fan submissions |
+| `armory.html` | The Armory: gear behind the roster, with fan submissions |
 | `news.html` | News |
 | `about.html` | Label manifesto |
 | `submit.html` | Demo submission guidelines |
@@ -40,7 +40,7 @@ To refresh the roster from a research spreadsheet:
 python3 scripts/build_data.py path/to/bands.csv
 ```
 
-Column names are matched loosely (see the script's docstring). Set `featured` to `yes` to pin a band to the home page. Band photos go in `assets/img/bands/` and are referenced from the `image` field.
+Column names are matched loosely (see the script's docstring). Set `featured` to `yes` to pin a band to the home page. Band tiles show a faint album cover behind the band's initial. By default the visitor's browser looks one up on Deezer (falling back to iTunes) by exact band name and caches it for 30 days; bands flagged `provisional` skip the lookup so a namesake's cover never appears. To choose the image yourself, put it in `assets/img/bands/` and set the band's `image` field to its path.
 
 ## Publishing on GitHub Pages
 
@@ -48,5 +48,5 @@ Settings → Pages → Deploy from a branch → `main` / root. (Pages on a priva
 
 ## Placeholders to replace
 
-- `demos@raveneyerecords.com` in `submit.html` and `gear@raveneyerecords.com` in `arsenal.html` (no domain registered yet)
+- `demos@raveneyerecords.com` in `submit.html` and `gear@raveneyerecords.com` in `armory.html` (no domain registered yet)
 - The newsletter form in the footer is a visual placeholder; connect it to Buttondown, Mailchimp or similar.

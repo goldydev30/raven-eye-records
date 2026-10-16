@@ -17,8 +17,8 @@
   var NAV = [
     ["index.html", "Home"],
     ["roster.html", "Artists"],
-    ["lyrics.html", "Lyrics Codex"],
-    ["arsenal.html", "Arsenal"],
+    ["lyrics.html", "Codex"],
+    ["armory.html", "Armory"],
     ["news.html", "News"],
     ["about.html", "About"],
     ["submit.html", "Demos"]
@@ -59,11 +59,93 @@
     return b.ma_url || "https://www.metal-archives.com/search?searchString=" + encodeURIComponent(b.name) + "&type=band_name";
   }
 
+  /* ---------- cover art ----------
+     Each band tile shows a faint album cover behind its initial. A cover comes from the
+     band's own "image" field when set; otherwise the visitor's browser looks one up on
+     Deezer (then iTunes) by exact artist name and caches it for 30 days. Bands whose
+     identity is still provisional skip the lookup so a namesake's cover never shows. */
+  function artBox(b) {
+    return '<div class="art" data-band="' + esc(b.slug) + '" style="' + artStyle(b.name) + '"><span>' + esc(initial(b.name)) + "</span></div>";
+  }
+  var ART_TTL = 30 * 864e5, artMem = {}, artWaiting = {}, artQueue = [], artActive = 0, jsonpN = 0;
+  function norm(s) { return String(s).normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().replace(/[^a-z0-9]/g, ""); }
+  function cacheGet(slug) {
+    if (slug in artMem) return artMem[slug];
+    try { var c = JSON.parse(localStorage.getItem("rer-art:" + slug)); if (c && Date.now() - c.t < ART_TTL) return (artMem[slug] = c.u); } catch (e) {}
+    return undefined;
+  }
+  function cacheSet(slug, url) {
+    artMem[slug] = url;
+    try { localStorage.setItem("rer-art:" + slug, JSON.stringify({ u: url, t: Date.now() })); } catch (e) {}
+  }
+  function jsonp(url, done) {
+    var name = "rerJsonp" + (++jsonpN), el = document.createElement("script"), fin = false;
+    function end(data) { if (fin) return; fin = true; delete window[name]; el.remove(); done(data); }
+    window[name] = end;
+    el.onerror = function () { end(null); };
+    setTimeout(function () { end(null); }, 8000);
+    el.src = url + (url.indexOf("?") > -1 ? "&" : "?") + "callback=" + name;
+    document.head.appendChild(el);
+  }
+  function lookupCover(b, done) {
+    var want = norm(b.name);
+    jsonp("https://api.deezer.com/search/album?output=jsonp&q=" + encodeURIComponent('artist:"' + b.name + '"'), function (r) {
+      var hit = r && r.data && r.data.filter(function (a) { return a.artist && norm(a.artist.name) === want && a.cover_xl; })[0];
+      if (hit) return done(hit.cover_xl);
+      jsonp("https://itunes.apple.com/search?media=music&entity=album&limit=15&term=" + encodeURIComponent(b.name), function (r2) {
+        var hit2 = r2 && r2.results && r2.results.filter(function (a) { return norm(a.artistName) === want && a.artworkUrl100; })[0];
+        done(hit2 ? hit2.artworkUrl100.replace("100x100bb", "600x600bb") : "");
+      });
+    });
+  }
+  function pumpArt() {
+    while (artActive < 2 && artQueue.length) {
+      (function (b) {
+        artActive++;
+        lookupCover(b, function (url) {
+          artActive--;
+          cacheSet(b.slug, url);
+          (artWaiting[b.slug] || []).forEach(function (el) { showCover(el, url); });
+          delete artWaiting[b.slug];
+          pumpArt();
+        });
+      })(artQueue.shift());
+    }
+  }
+  function showCover(el, url) {
+    if (!url || el.querySelector(".cover")) return;
+    var img = new Image();
+    img.className = "cover"; img.alt = ""; img.referrerPolicy = "no-referrer";
+    img.onload = function () { img.classList.add("on"); };
+    img.src = url;
+    el.insertBefore(img, el.firstChild);
+  }
+  function loadArt(el) {
+    var b = findBand(el.getAttribute("data-band"));
+    if (!b) return;
+    if (b.image) return showCover(el, b.image);
+    if (b.provisional) return;
+    var c = cacheGet(b.slug);
+    if (c !== undefined) return showCover(el, c);
+    if (artWaiting[b.slug]) return artWaiting[b.slug].push(el);
+    artWaiting[b.slug] = [el];
+    artQueue.push(b);
+    pumpArt();
+  }
+  var artObserver = "IntersectionObserver" in window ? new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) { if (e.isIntersecting) { artObserver.unobserve(e.target); loadArt(e.target); } });
+  }, { rootMargin: "200px" }) : null;
+  function hydrateArt() {
+    document.querySelectorAll(".art[data-band]:not([data-art])").forEach(function (el) {
+      el.setAttribute("data-art", "1");
+      if (artObserver) artObserver.observe(el); else loadArt(el);
+    });
+  }
+
   function bandCard(b) {
-    var art = b.image ? '<img src="' + esc(b.image) + '" alt="" loading="lazy">' : "<span>" + esc(initial(b.name)) + "</span>";
     return '<a class="band-card" href="' + bandUrl(b) + '">' +
       (b.country ? '<span class="flag">' + esc(b.country) + "</span>" : "") +
-      '<div class="art" style="' + artStyle(b.name) + '">' + art + "</div>" +
+      artBox(b) +
       '<div class="body"><h3>' + esc(b.name) + '</h3><div class="meta">' +
       (b.genre ? esc(b.genre) : '<span class="pending">Genre being researched</span>') + "</div></div></a>";
   }
@@ -73,8 +155,8 @@
     var here = location.pathname.split("/").pop() || "index.html";
     var top = document.createElement("div");
     top.className = "topbar";
-    top.innerHTML = '<div class="wrap"><span>Grassroots black metal &middot; Est. 2026</span>' +
-      '<span class="hide-sm"><a href="submit.html">Submit a demo</a> &nbsp;/&nbsp; <a href="lyrics.html">Read the lyrics</a></span></div>';
+    top.innerHTML = '<div class="wrap"><span>Est. 2026</span>' +
+      '<span><a href="submit.html">Demo</a> &nbsp;/&nbsp; <a href="lyrics.html">Lyrics</a></span></div>';
 
     var header = document.createElement("header");
     header.className = "site";
@@ -95,7 +177,7 @@
       '<form class="newsletter" onsubmit="event.preventDefault();this.innerHTML=\'<span>Thank you. The ravens will find you.</span>\'">' +
       '<label class="sr-only" for="nl">Email</label><input id="nl" type="email" placeholder="Your email" required><button class="btn blood" type="submit">Join</button></form></div>' +
       '<div><h4>Label</h4><ul><li><a href="about.html">About</a></li><li><a href="news.html">News</a></li><li><a href="submit.html">Demo submissions</a></li></ul></div>' +
-      '<div><h4>Explore</h4><ul><li><a href="roster.html">Artists</a></li><li><a href="lyrics.html">Lyrics Codex</a></li><li><a href="lyrics.html#themes">Lyrical themes</a></li></ul></div>' +
+      '<div><h4>Explore</h4><ul><li><a href="roster.html">Artists</a></li><li><a href="lyrics.html">The Codex</a></li><li><a href="lyrics.html#themes">Lyrical themes</a></li></ul></div>' +
       '<div><h4>Elsewhere</h4><ul><li><a href="https://www.metal-archives.com" rel="noopener">Encyclopaedia Metallum</a></li><li><a href="https://bandcamp.com/tag/black-metal" rel="noopener">Bandcamp</a></li></ul></div>' +
       '</div><div class="fine"><span>&copy; ' + new Date().getFullYear() + ' Raven Eye Records</span>' +
       '<span>Band names and marks belong to their owners. Lyrics are quoted only with permission.</span></div></div>';
@@ -194,7 +276,6 @@
     }
     document.title = b.name + " | Raven Eye Records";
     var themes = (b.themes || []);
-    var art = b.image ? '<img src="' + esc(b.image) + '" alt="' + esc(b.name) + '">' : "<span>" + esc(initial(b.name)) + "</span>";
     var codex = (window.RER_CODEX || []).filter(function (e) { return e.band === b.slug; });
     var related = bands().filter(function (x) {
       return x !== b && ((b.country && x.country === b.country) || themes.some(function (t) { return (x.themes || []).indexOf(t) > -1; }));
@@ -202,7 +283,7 @@
 
     root.innerHTML =
       '<section class="band-hero"><div class="wrap">' +
-      '<div class="art" style="' + artStyle(b.name) + '">' + art + "</div>" +
+      artBox(b) +
       '<div><span class="eyebrow">Artist</span><h1>' + esc(b.name) + "</h1>" +
       (b.summary ? "<p>" + esc(b.summary) + "</p>" : "") +
       '<dl class="facts">' +
@@ -228,7 +309,7 @@
         '" target="_blank" rel="noopener">Encyclopaedia Metallum</a>. Raven Eye publishes lyric excerpts and commentary here only with the band\'s permission.</p>') +
       "</div></section>" +
 
-      arsenalSection(b) +
+      armorySection(b) +
 
       (related.length ? '<section class="block"><div class="wrap"><div class="section-head"><h2>Kindred spirits</h2><a class="more" href="roster.html">Full roster</a></div>' +
         '<div class="grid bands">' + related.map(bandCard).join("") + "</div></div></section>" : "");
@@ -255,14 +336,14 @@
       (g.confidence === "low" ? '<span class="tag">Unconfirmed</span>' : "") +
       (g.source ? '<a href="' + esc(g.source) + '" target="_blank" rel="noopener">Source</a>' : "") + "</span></li>";
   }
-  function arsenalSection(b) {
+  function armorySection(b) {
     var gear = gearFor(b);
     var byMember = {};
     gear.forEach(function (g) {
       var k = (g.member || "Band") + (g.role ? " \u00b7 " + g.role : "");
       (byMember[k] = byMember[k] || []).push(g);
     });
-    return '<section class="block" id="gear"><div class="wrap"><div class="section-head"><div><span class="eyebrow">A musician\'s armour</span><h2>The Arsenal</h2></div>' +
+    return '<section class="block" id="gear"><div class="wrap"><div class="section-head"><div><span class="eyebrow">A musician\'s armor</span><h2>The Armory</h2></div>' +
       '<a class="more" href="' + submitGearUrl(b) + '" target="_blank" rel="noopener">Submit gear</a></div>' +
       (gear.length
         ? '<div class="grid three">' + Object.keys(byMember).map(function (m) {
@@ -271,18 +352,18 @@
         : '<p class="muted">No rig information catalogued yet. Seen them live or in a playthrough? <a href="' + submitGearUrl(b) + '" target="_blank" rel="noopener">Tell us what they play</a>.</p>') +
       "</div></section>";
   }
-  function renderArsenal() {
-    var el = document.getElementById("arsenal");
+  function renderArmory() {
+    var el = document.getElementById("armory");
     if (!el) return;
     var withGear = bands().filter(function (b) { return gearFor(b).length; });
     var brands = {};
     withGear.forEach(function (b) { gearFor(b).forEach(function (g) { if (g.brand && !/^unknown$/i.test(g.brand)) (brands[g.brand] = brands[g.brand] || {})[b.slug] = b; }); });
     var top = Object.keys(brands).sort(function (a, b) { return Object.keys(brands[b]).length - Object.keys(brands[a]).length || a.localeCompare(b); });
     el.innerHTML =
-      '<div class="section-head"><h2>Armouries by band</h2><span class="count">' + withGear.length + " bands catalogued</span></div>" +
+      '<div class="section-head"><h2>Armories by band</h2><span class="count">' + withGear.length + " bands catalogued</span></div>" +
       '<div class="grid bands">' + withGear.map(function (b) {
         var g = gearFor(b), endorsed = g.filter(function (x) { return x.relationship === "endorsement" || x.relationship === "signature_model"; });
-        return '<a class="band-card" href="' + bandUrl(b) + '#gear"><div class="art" style="' + artStyle(b.name) + '"><span>' + esc(initial(b.name)) + "</span></div>" +
+        return '<a class="band-card" href="' + bandUrl(b) + '#gear">' + artBox(b) +
           '<div class="body"><h3>' + esc(b.name) + '</h3><div class="meta">' + g.length + (g.length === 1 ? " piece" : " pieces") + (endorsed.length ? " &middot; " + endorsed.length + " endorsed" : "") + "</div></div></a>";
       }).join("") + "</div>" +
       '<hr class="rule"><h2>Forges</h2><p class="muted">The makers behind the roster\'s rigs.</p>' +
@@ -356,7 +437,9 @@
     renderBand();
     renderLyrics();
     renderNews("news-list");
-    renderArsenal();
+    renderArmory();
+    hydrateArt();
+    new MutationObserver(hydrateArt).observe(document.body, { childList: true, subtree: true });
   });
 
   window.RER = { slugify: slugify, esc: esc };
