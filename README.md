@@ -44,7 +44,7 @@ Column names are matched loosely (see the script's docstring). Set `featured` to
 
 ## Logo
 
-The raven-eye logo is drawn in code by `scripts/build_logo.py` (thousands of jittered ink strokes, roughened with an SVG filter for a hand-cut look). Run `python3 scripts/build_logo.py` after changing it; it writes `assets/js/logo.js` (the animated inline version) plus `assets/img/raven-eye.svg` and the favicon `assets/img/sigil.svg`. Every eye blinks when the pointer passes over it; the large masthead eye also blinks on its own and closes as you scroll past it.
+The logo, a black metal raven with a narrowed, burning eye and a bloody eyeball clamped in its beak, is drawn in code by `scripts/build_logo.py` (a hand-placed silhouette filled with jittered ink strokes and roughened with an SVG filter). Run `python3 scripts/build_logo.py` after changing it; it writes `assets/js/logo.js` (animated inline versions) plus `assets/img/raven-eye.svg` and the favicon `assets/img/sigil.svg`. The raven's eye blinks when the pointer passes over it; the masthead raven also blinks on its own, narrows its eye shut as you scroll past, and drips blood.
 
 ## Publishing on GitHub Pages
 
