@@ -38,6 +38,25 @@ window.RER_BANDS = [
     "provisional": false
   },
   {
+    "name": "Aephanemer",
+    "slug": "aephanemer",
+    "country": "France",
+    "genre": "Melodic Death Metal",
+    "label": "Napalm Records",
+    "families": [
+      "Melodic Death Metal"
+    ],
+    "themes": [
+      "Philosophy",
+      "Nature",
+      "Literature"
+    ],
+    "status": "Active",
+    "location": "Toulouse",
+    "ma_url": "https://www.metal-archives.com/bands/Aephanemer/3540375286",
+    "provisional": false
+  },
+  {
     "name": "Alburnum",
     "slug": "alburnum",
     "country": "Netherlands",
@@ -186,6 +205,26 @@ window.RER_BANDS = [
     "provisional": false
   },
   {
+    "name": "At the Gates",
+    "slug": "at-the-gates",
+    "country": "Sweden",
+    "genre": "Melodic Death Metal",
+    "label": "Century Media Records",
+    "families": [
+      "Melodic Death Metal"
+    ],
+    "themes": [
+      "Existentialism",
+      "Philosophy",
+      "Death",
+      "Despair"
+    ],
+    "status": "Active, future uncertain",
+    "location": "Gothenburg",
+    "ma_url": "https://www.metal-archives.com/bands/At_the_Gates/43",
+    "provisional": false
+  },
+  {
     "name": "Atavistia",
     "slug": "atavistia",
     "country": "Canada",
@@ -204,6 +243,24 @@ window.RER_BANDS = [
     "status": "Active",
     "location": "Vancouver, British Columbia",
     "ma_url": "https://www.metal-archives.com/bands/Atavistia/3540431700",
+    "provisional": false
+  },
+  {
+    "name": "Belore",
+    "slug": "belore",
+    "country": "France",
+    "genre": "Epic Black Metal",
+    "label": "Northern Silence Productions",
+    "families": [
+      "Epic Black Metal"
+    ],
+    "themes": [
+      "Medieval fantasy",
+      "Nature",
+      "Imaginary worlds"
+    ],
+    "status": "Active",
+    "ma_url": "https://www.metal-archives.com/bands/Belore/3540462700",
     "provisional": false
   },
   {
@@ -263,6 +320,25 @@ window.RER_BANDS = [
     ],
     "status": "Active",
     "ma_url": "https://www.metal-archives.com/bands/Bloody_Valkyria/3540541497",
+    "provisional": false
+  },
+  {
+    "name": "Brymir",
+    "slug": "brymir",
+    "country": "Finland",
+    "genre": "Melodic Death Metal (symphonic)",
+    "label": "Napalm Records",
+    "families": [
+      "Melodic Death Metal"
+    ],
+    "themes": [
+      "Fantasy",
+      "Mythology",
+      "Personal emotions"
+    ],
+    "status": "Active",
+    "location": "Helsinki",
+    "ma_url": "https://www.metal-archives.com/bands/Brymir/3540325883",
     "provisional": false
   },
   {
@@ -485,6 +561,43 @@ window.RER_BANDS = [
     "provisional": true
   },
   {
+    "name": "Forefather",
+    "slug": "forefather",
+    "country": "United Kingdom",
+    "genre": "Black/Folk/Viking Metal",
+    "label": "Seven Kingdoms",
+    "families": [
+      "Blackened Folk Metal"
+    ],
+    "themes": [
+      "Anglo-Saxon history",
+      "English heritage"
+    ],
+    "status": "Active",
+    "location": "Surrey, England",
+    "ma_url": "https://www.metal-archives.com/bands/forefather/781",
+    "provisional": false
+  },
+  {
+    "name": "Fragments of Unbecoming",
+    "slug": "fragments-of-unbecoming",
+    "country": "Germany",
+    "genre": "Melodic Death Metal",
+    "label": "Apostasy Records",
+    "families": [
+      "Melodic Death Metal"
+    ],
+    "themes": [
+      "Fantasy",
+      "Darkness",
+      "Conceptual chapters"
+    ],
+    "status": "Active",
+    "location": "Laudenbach",
+    "ma_url": "https://www.metal-archives.com/bands/Fragments_of_Unbecoming/10046",
+    "provisional": false
+  },
+  {
     "name": "Frozen Soul",
     "slug": "frozen-soul",
     "country": "United States",
@@ -499,6 +612,26 @@ window.RER_BANDS = [
     "status": "Active",
     "location": "Fort Worth, Texas",
     "ma_url": "https://www.metal-archives.com/bands/Frozen_Soul/3540450365",
+    "provisional": false
+  },
+  {
+    "name": "Gaerea",
+    "slug": "gaerea",
+    "country": "Portugal",
+    "genre": "Black Metal, Post-Black Metal",
+    "label": "Century Media Records",
+    "families": [
+      "Melodic Black Metal"
+    ],
+    "themes": [
+      "Death",
+      "Despair",
+      "Introspection",
+      "Existentialism"
+    ],
+    "status": "Active",
+    "location": "Porto",
+    "ma_url": "https://www.metal-archives.com/bands/Gaerea/3540418247",
     "provisional": false
   },
   {
@@ -693,6 +826,44 @@ window.RER_BANDS = [
     "provisional": false
   },
   {
+    "name": "Kalmah",
+    "slug": "kalmah",
+    "country": "Finland",
+    "genre": "Melodic Death Metal",
+    "label": "Ranka Kustannus",
+    "families": [
+      "Melodic Death Metal"
+    ],
+    "themes": [
+      "Swamps",
+      "Nature",
+      "War",
+      "Finnish folklore"
+    ],
+    "status": "Active",
+    "location": "Pudasjärvi",
+    "ma_url": "https://www.metal-archives.com/bands/Kalmah/702",
+    "provisional": false
+  },
+  {
+    "name": "Kanonenfieber",
+    "slug": "kanonenfieber",
+    "country": "Germany",
+    "genre": "Melodic Black/Death Metal",
+    "label": "Century Media Records",
+    "families": [
+      "Melodic Black Metal",
+      "Blackened Death Metal"
+    ],
+    "themes": [
+      "World War I"
+    ],
+    "status": "Active",
+    "location": "Bamberg, Bavaria",
+    "ma_url": "https://www.metal-archives.com/bands/Kanonenfieber/3540483079",
+    "provisional": false
+  },
+  {
     "name": "Khepra",
     "slug": "khepra",
     "country": "Turkey",
@@ -711,6 +882,27 @@ window.RER_BANDS = [
     "location": "Anatolia",
     "ma_url": "https://www.metal-archives.com/bands/khepra/3540412844",
     "provisional": true
+  },
+  {
+    "name": "King of Asgard",
+    "slug": "king-of-asgard",
+    "country": "Sweden",
+    "genre": "Viking/Black/Death Metal",
+    "label": "Trollmusic",
+    "families": [
+      "Blackened Death Metal",
+      "Blackened Folk Metal"
+    ],
+    "themes": [
+      "Norse mythology",
+      "Death",
+      "Afterlife",
+      "Heritage"
+    ],
+    "status": "Active",
+    "location": "Mullsjö",
+    "ma_url": "https://www.metal-archives.com/bands/King_of_Asgard/3540295065",
+    "provisional": false
   },
   {
     "name": "Koviria",
@@ -906,6 +1098,25 @@ window.RER_BANDS = [
     "provisional": true
   },
   {
+    "name": "Melechesh",
+    "slug": "melechesh",
+    "country": "Netherlands",
+    "genre": "Black/Folk Metal (Mesopotamian metal)",
+    "label": "Reigning Phoenix Music",
+    "families": [
+      "Blackened Folk Metal"
+    ],
+    "themes": [
+      "Mesopotamian and Sumerian mythology",
+      "Assyrian history",
+      "Occultism"
+    ],
+    "status": "Active",
+    "location": "Amsterdam (founded in Jerusalem)",
+    "ma_url": "https://www.metal-archives.com/bands/melechesh/424",
+    "provisional": true
+  },
+  {
     "name": "Mgła",
     "slug": "mga",
     "country": "Poland",
@@ -988,6 +1199,25 @@ window.RER_BANDS = [
     "provisional": false
   },
   {
+    "name": "Mors Principium Est",
+    "slug": "mors-principium-est",
+    "country": "Finland",
+    "genre": "Melodic Death Metal",
+    "label": "Reigning Phoenix Music",
+    "families": [
+      "Melodic Death Metal"
+    ],
+    "themes": [
+      "Death",
+      "Existence",
+      "Humanity"
+    ],
+    "status": "Active",
+    "location": "Pori",
+    "ma_url": "https://www.metal-archives.com/bands/mors_principium_est/6494",
+    "provisional": false
+  },
+  {
     "name": "Mur",
     "slug": "mur",
     "country": "Iceland",
@@ -1040,6 +1270,43 @@ window.RER_BANDS = [
     "location": "Mineral, Virginia",
     "ma_url": "https://www.metal-archives.com/bands/Null/3540345885",
     "provisional": true
+  },
+  {
+    "name": "Omnium Gatherum",
+    "slug": "omnium-gatherum",
+    "country": "Finland",
+    "genre": "Melodic Death Metal",
+    "label": "Century Media Records",
+    "families": [
+      "Melodic Death Metal"
+    ],
+    "themes": [
+      "Life",
+      "Philosophy",
+      "Nature"
+    ],
+    "status": "Active",
+    "location": "Karhula, Kotka",
+    "ma_url": "https://www.metal-archives.com/bands/omnium_gatherum/3306",
+    "provisional": false
+  },
+  {
+    "name": "Primalfrost",
+    "slug": "primalfrost",
+    "country": "Canada",
+    "genre": "Melodic Death/Power Metal",
+    "label": "Independent",
+    "families": [
+      "Melodic Death Metal"
+    ],
+    "themes": [
+      "Fantasy",
+      "Nature"
+    ],
+    "status": "Active",
+    "location": "Toronto, Ontario",
+    "ma_url": "https://www.metal-archives.com/bands/Primalfrost/3540354315",
+    "provisional": false
   },
   {
     "name": "Rackseed",
@@ -1108,6 +1375,20 @@ window.RER_BANDS = [
     "provisional": false
   },
   {
+    "name": "Shylmagoghnar",
+    "slug": "shylmagoghnar",
+    "country": "Netherlands",
+    "genre": "Atmospheric Black Metal/Melodic Death Metal",
+    "label": "Napalm Records",
+    "families": [
+      "Melodic Black Metal",
+      "Melodic Death Metal"
+    ],
+    "status": "Active",
+    "ma_url": "https://www.metal-archives.com/bands/Shylmagoghnar/3540377669",
+    "provisional": false
+  },
+  {
     "name": "Skuggor",
     "slug": "skuggor",
     "country": "Sweden",
@@ -1128,6 +1409,20 @@ window.RER_BANDS = [
     "provisional": false
   },
   {
+    "name": "Soilwork",
+    "slug": "soilwork",
+    "country": "Sweden",
+    "genre": "Melodic Death Metal",
+    "label": "Nuclear Blast",
+    "families": [
+      "Melodic Death Metal"
+    ],
+    "status": "Active",
+    "location": "Helsingborg",
+    "ma_url": "https://www.metal-archives.com/bands/soilwork/26",
+    "provisional": false
+  },
+  {
     "name": "Sparrows",
     "slug": "sparrows",
     "country": "United States",
@@ -1145,6 +1440,20 @@ window.RER_BANDS = [
     "location": "Dallas, Texas",
     "ma_url": "https://www.metal-archives.com/bands/Sparrows/3540357734",
     "provisional": true
+  },
+  {
+    "name": "Spere",
+    "slug": "spere",
+    "country": "Germany",
+    "genre": "Black Metal",
+    "label": "Northern Silence Productions",
+    "families": [
+      "Epic Black Metal"
+    ],
+    "themes": [],
+    "status": "Active",
+    "ma_url": "https://www.metal-archives.com/bands/Spere/3540553320",
+    "provisional": false
   },
   {
     "name": "Sulphur Aeon",
@@ -1182,6 +1491,26 @@ window.RER_BANDS = [
     "status": "Active",
     "location": "Vienna",
     "ma_url": "https://www.metal-archives.com/bands/summoning/29",
+    "provisional": false
+  },
+  {
+    "name": "Suotana",
+    "slug": "suotana",
+    "country": "Finland",
+    "genre": "Melodic Death/Black Metal",
+    "label": "Reaper Entertainment",
+    "families": [
+      "Melodic Death Metal",
+      "Melodic Black Metal"
+    ],
+    "themes": [
+      "Nature",
+      "Lapland",
+      "Winter"
+    ],
+    "status": "Active",
+    "location": "Rovaniemi",
+    "ma_url": "https://www.metal-archives.com/bands/Suotana/3540377503",
     "provisional": false
   },
   {
@@ -1259,6 +1588,25 @@ window.RER_BANDS = [
     "status": "Active",
     "location": "Stockholm",
     "ma_url": "https://www.metal-archives.com/bands/Thyrfing/337",
+    "provisional": false
+  },
+  {
+    "name": "Týr",
+    "slug": "tyr",
+    "country": "Faroe Islands",
+    "genre": "Progressive Folk/Viking Metal",
+    "label": "Runic Records",
+    "families": [
+      "Blackened Folk Metal"
+    ],
+    "themes": [
+      "Viking lore",
+      "Norse mythology",
+      "History"
+    ],
+    "status": "Active",
+    "location": "Tórshavn",
+    "ma_url": "https://www.metal-archives.com/bands/T%C3%BDr/14435",
     "provisional": false
   },
   {
@@ -1340,6 +1688,25 @@ window.RER_BANDS = [
     "provisional": false
   },
   {
+    "name": "Vreid",
+    "slug": "vreid",
+    "country": "Norway",
+    "genre": "Black Metal",
+    "label": "Indie Recordings",
+    "families": [
+      "Melodic Black Metal"
+    ],
+    "themes": [
+      "War",
+      "Norwegian resistance in WWII",
+      "Sogn"
+    ],
+    "status": "Active",
+    "location": "Sogndal",
+    "ma_url": "https://www.metal-archives.com/bands/Vreid/27072",
+    "provisional": false
+  },
+  {
     "name": "Walg",
     "slug": "walg",
     "country": "Netherlands",
@@ -1409,6 +1776,27 @@ window.RER_BANDS = [
     ],
     "status": "Active",
     "ma_url": "https://www.metal-archives.com/bands/Windthrow/3540453547",
+    "provisional": false
+  },
+  {
+    "name": "Wintersun",
+    "slug": "wintersun",
+    "country": "Finland",
+    "genre": "Melodic Death/Power Metal",
+    "label": "Nuclear Blast",
+    "families": [
+      "Melodic Death Metal"
+    ],
+    "themes": [
+      "Nature",
+      "Seasons",
+      "Time",
+      "Space",
+      "Winter"
+    ],
+    "status": "Active",
+    "location": "Helsinki",
+    "ma_url": "https://www.metal-archives.com/bands/Wintersun/22813",
     "provisional": false
   },
   {

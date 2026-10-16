@@ -919,5 +919,785 @@ window.RER_GEAR = {
       "source": "https://www.savarez.com/node/2959",
       "confidence": "high"
     }
+  ],
+  "at-the-gates": [
+    {
+      "member": "Anders Björler",
+      "role": "guitar",
+      "category": "amp",
+      "brand": "Peavey",
+      "model": "Supreme 160",
+      "relationship": "seen_using",
+      "source": "https://equipboard.com/pros/anders-bjorler",
+      "confidence": "low"
+    },
+    {
+      "member": "Anders Björler",
+      "role": "guitar",
+      "category": "effects",
+      "brand": "Boss",
+      "model": "HM-2 Heavy Metal",
+      "relationship": "seen_using",
+      "source": "https://equipboard.com/pros/anders-bjorler",
+      "confidence": "low"
+    },
+    {
+      "member": "Anders Björler",
+      "role": "guitar",
+      "category": "effects",
+      "brand": "Boss",
+      "model": "MT-2 Metal Zone",
+      "relationship": "seen_using",
+      "source": "https://equipboard.com/pros/anders-bjorler",
+      "confidence": "low"
+    },
+    {
+      "member": "Anders Björler",
+      "role": "guitar",
+      "category": "guitar",
+      "brand": "Ibanez",
+      "model": "Maxxas",
+      "relationship": "seen_using",
+      "source": "https://equipboard.com/pros/anders-bjorler",
+      "confidence": "low"
+    },
+    {
+      "member": "Anders Björler",
+      "role": "guitar",
+      "category": "pickups",
+      "brand": "EMG",
+      "model": "81",
+      "relationship": "seen_using",
+      "source": "https://equipboard.com/pros/anders-bjorler",
+      "confidence": "low"
+    },
+    {
+      "member": "Martin Larsson",
+      "role": "guitar",
+      "category": "guitar",
+      "brand": "Solar Guitars",
+      "model": "A1.6 Baritone ATG",
+      "relationship": "signature_model",
+      "source": "https://www.premierguitar.com/solar-guitars-announces-new-signature-guitars-for-jonas-stalhammar-and-martin-larsson-from-at-the-gates",
+      "confidence": "high"
+    },
+    {
+      "member": "Martin Larsson",
+      "role": "guitar",
+      "category": "pickups",
+      "brand": "Fishman",
+      "model": "Fluence Modern Humbucker set",
+      "relationship": "seen_using",
+      "source": "https://www.premierguitar.com/solar-guitars-announces-new-signature-guitars-for-jonas-stalhammar-and-martin-larsson-from-at-the-gates",
+      "confidence": "medium"
+    },
+    {
+      "member": "Martin Larsson",
+      "role": "guitar",
+      "category": "guitar",
+      "brand": "Solar Guitars",
+      "model": "A1.6 BOP Artist",
+      "relationship": "seen_using",
+      "source": "https://equipboard.com/pros/martin-larsson",
+      "confidence": "medium"
+    },
+    {
+      "member": "Martin Larsson",
+      "role": "guitar",
+      "category": "guitar",
+      "brand": "Caparison",
+      "model": "Angelus Custom",
+      "relationship": "seen_using",
+      "source": "https://equipboard.com/pros/martin-larsson",
+      "confidence": "low"
+    },
+    {
+      "member": "Jonas Björler",
+      "role": "bass",
+      "category": "bass",
+      "brand": "Solar Guitars",
+      "model": "AB1.4JB",
+      "relationship": "signature_model",
+      "source": "https://www.notreble.com/?p=91381",
+      "confidence": "high"
+    },
+    {
+      "member": "Jonas Björler",
+      "role": "bass",
+      "category": "pickups",
+      "brand": "Seymour Duncan",
+      "model": "Quarter Pounder P/J set",
+      "relationship": "seen_using",
+      "source": "https://www.notreble.com/?p=91381",
+      "confidence": "medium"
+    },
+    {
+      "member": "Jonas Björler",
+      "role": "bass",
+      "category": "bass",
+      "brand": "Warwick",
+      "model": "Corvette Standard",
+      "relationship": "seen_using",
+      "source": "https://equipboard.com/pros/jonas-bjorler",
+      "confidence": "medium"
+    },
+    {
+      "member": "Jonas Björler",
+      "role": "bass",
+      "category": "bass",
+      "brand": "Warwick",
+      "model": "Corvette Std. 5",
+      "relationship": "seen_using",
+      "source": "https://equipboard.com/pros/jonas-bjorler",
+      "confidence": "medium"
+    },
+    {
+      "member": "Jonas Björler",
+      "role": "bass",
+      "category": "amp",
+      "brand": "EBS",
+      "model": "TD660",
+      "relationship": "seen_using",
+      "source": "https://equipboard.com/pros/jonas-bjorler",
+      "confidence": "medium"
+    },
+    {
+      "member": "Jonas Björler",
+      "role": "bass",
+      "category": "effects",
+      "brand": "Pro Co",
+      "model": "RAT",
+      "relationship": "seen_using",
+      "source": "https://equipboard.com/pros/jonas-bjorler",
+      "confidence": "low"
+    },
+    {
+      "member": "Adrian Erlandsson",
+      "role": "drums",
+      "category": "drums",
+      "brand": "The British Drum Company",
+      "model": "",
+      "relationship": "endorsement",
+      "source": "https://www.drummingnewsnetwork.com/?p=11584",
+      "confidence": "high"
+    },
+    {
+      "member": "Adrian Erlandsson",
+      "role": "drums",
+      "category": "cymbals",
+      "brand": "Sabian",
+      "model": "",
+      "relationship": "endorsement",
+      "source": "https://en.wikipedia.org/wiki/Adrian_Erlandsson",
+      "confidence": "medium"
+    }
+  ],
+  "gaerea": [
+    {
+      "member": "(guitarists, anonymous)",
+      "role": "guitar",
+      "category": "pickups",
+      "brand": "Fishman",
+      "model": "Fluence (model unspecified)",
+      "relationship": "endorsement",
+      "source": "https://fishman.com/artist/gaerea/",
+      "confidence": "high"
+    }
+  ],
+  "kalmah": [
+    {
+      "member": "Antti Kokko",
+      "role": "lead guitar",
+      "category": "guitar",
+      "brand": "ESP",
+      "model": "E-II SV",
+      "relationship": "seen_using",
+      "source": "https://equipboard.com/pros/antti-kokko",
+      "confidence": "medium"
+    },
+    {
+      "member": "Antti Kokko",
+      "role": "lead guitar",
+      "category": "guitar",
+      "brand": "ESP",
+      "model": "USA V-II",
+      "relationship": "seen_using",
+      "source": "https://equipboard.com/pros/antti-kokko",
+      "confidence": "medium"
+    },
+    {
+      "member": "Antti Kokko",
+      "role": "lead guitar",
+      "category": "amp",
+      "brand": "VHT",
+      "model": "Sig:X",
+      "relationship": "seen_using",
+      "source": "https://equipboard.com/pros/antti-kokko",
+      "confidence": "medium"
+    },
+    {
+      "member": "Antti Kokko",
+      "role": "lead guitar",
+      "category": "amp",
+      "brand": "Krank",
+      "model": "4x12 cabinet",
+      "relationship": "seen_using",
+      "source": "https://equipboard.com/pros/antti-kokko",
+      "confidence": "medium"
+    },
+    {
+      "member": "Antti Kokko",
+      "role": "lead guitar",
+      "category": "effects",
+      "brand": "Ibanez",
+      "model": "TS808 Tube Screamer",
+      "relationship": "seen_using",
+      "source": "https://equipboard.com/pros/antti-kokko",
+      "confidence": "medium"
+    },
+    {
+      "member": "Antti Kokko",
+      "role": "lead guitar",
+      "category": "effects",
+      "brand": "MXR",
+      "model": "M135 Smart Gate",
+      "relationship": "seen_using",
+      "source": "https://equipboard.com/pros/antti-kokko",
+      "confidence": "medium"
+    },
+    {
+      "member": "Antti Kokko",
+      "role": "lead guitar",
+      "category": "effects",
+      "brand": "Boss",
+      "model": "SD-1W Super OverDrive",
+      "relationship": "seen_using",
+      "source": "https://equipboard.com/pros/antti-kokko",
+      "confidence": "medium"
+    },
+    {
+      "member": "Antti Kokko",
+      "role": "lead guitar",
+      "category": "effects",
+      "brand": "Boss",
+      "model": "MT-2 Metal Zone",
+      "relationship": "seen_using",
+      "source": "https://equipboard.com/pros/antti-kokko",
+      "confidence": "medium"
+    },
+    {
+      "member": "Antti Kokko",
+      "role": "lead guitar",
+      "category": "effects",
+      "brand": "Boss",
+      "model": "TU-2 Chromatic Tuner",
+      "relationship": "seen_using",
+      "source": "https://equipboard.com/pros/antti-kokko",
+      "confidence": "medium"
+    },
+    {
+      "member": "Antti Kokko",
+      "role": "lead guitar",
+      "category": "other",
+      "brand": "Dunlop",
+      "model": "Tortex Standard 0.60mm picks",
+      "relationship": "seen_using",
+      "source": "https://equipboard.com/pros/antti-kokko",
+      "confidence": "medium"
+    },
+    {
+      "member": "Antti Kokko",
+      "role": "lead guitar",
+      "category": "strings",
+      "brand": "DR Strings",
+      "model": "Dragon Skin+ DEQ-10/52",
+      "relationship": "seen_using",
+      "source": "https://equipboard.com/pros/antti-kokko",
+      "confidence": "medium"
+    },
+    {
+      "member": "Antti Kokko",
+      "role": "lead guitar",
+      "category": "pickups",
+      "brand": "Seymour Duncan",
+      "model": "Sentient (neck)",
+      "relationship": "seen_using",
+      "source": "https://equipboard.com/pros/antti-kokko",
+      "confidence": "medium"
+    },
+    {
+      "member": "Antti Kokko",
+      "role": "lead guitar",
+      "category": "pickups",
+      "brand": "Seymour Duncan",
+      "model": "Pegasus",
+      "relationship": "seen_using",
+      "source": "https://equipboard.com/pros/antti-kokko",
+      "confidence": "medium"
+    }
+  ],
+  "kanonenfieber": [
+    {
+      "member": "Hans",
+      "role": "drums live",
+      "category": "drums",
+      "brand": "Gretsch",
+      "model": "Renown (Satin Tobacco Burst)",
+      "relationship": "endorsement",
+      "source": "https://gretschdrums.com/artists/kanonenfieber-hans",
+      "confidence": "high"
+    },
+    {
+      "member": "Hans",
+      "role": "drums live",
+      "category": "drums",
+      "brand": "Gretsch",
+      "model": "USA Custom Bell Brass snare 6.5x14",
+      "relationship": "endorsement",
+      "source": "https://gretschdrums.com/artists/kanonenfieber-hans",
+      "confidence": "high"
+    },
+    {
+      "member": "Hans",
+      "role": "drums live",
+      "category": "drums",
+      "brand": "HDrums",
+      "model": "Custom oak kit",
+      "relationship": "seen_using",
+      "source": "https://www.bonedo.de/?p=2622179",
+      "confidence": "medium"
+    },
+    {
+      "member": "Hans",
+      "role": "drums live",
+      "category": "drums",
+      "brand": "Tempest",
+      "model": "14x6.5 bell-bronze snare",
+      "relationship": "seen_using",
+      "source": "https://www.bonedo.de/?p=2622179",
+      "confidence": "medium"
+    },
+    {
+      "member": "Hans",
+      "role": "drums live",
+      "category": "cymbals",
+      "brand": "Istanbul Mehmet",
+      "model": "14in X-Metal hi-hat",
+      "relationship": "seen_using",
+      "source": "https://www.bonedo.de/?p=2622179",
+      "confidence": "medium"
+    },
+    {
+      "member": "Hans",
+      "role": "drums live",
+      "category": "cymbals",
+      "brand": "Istanbul Mehmet",
+      "model": "17in Blackbell crash",
+      "relationship": "seen_using",
+      "source": "https://www.bonedo.de/?p=2622179",
+      "confidence": "medium"
+    },
+    {
+      "member": "Hans",
+      "role": "drums live",
+      "category": "cymbals",
+      "brand": "Istanbul Mehmet",
+      "model": "10in Hamer splash",
+      "relationship": "seen_using",
+      "source": "https://www.bonedo.de/?p=2622179",
+      "confidence": "medium"
+    },
+    {
+      "member": "Hans",
+      "role": "drums live",
+      "category": "cymbals",
+      "brand": "Istanbul Mehmet",
+      "model": "18in Hamer Split crash",
+      "relationship": "seen_using",
+      "source": "https://www.bonedo.de/?p=2622179",
+      "confidence": "medium"
+    },
+    {
+      "member": "Hans",
+      "role": "drums live",
+      "category": "cymbals",
+      "brand": "Istanbul Mehmet",
+      "model": "14in Horacio Hernandez El Negro china",
+      "relationship": "seen_using",
+      "source": "https://www.bonedo.de/?p=2622179",
+      "confidence": "medium"
+    },
+    {
+      "member": "Hans",
+      "role": "drums live",
+      "category": "cymbals",
+      "brand": "Istanbul Mehmet",
+      "model": "19in Traditional Paperthin crash",
+      "relationship": "seen_using",
+      "source": "https://www.bonedo.de/?p=2622179",
+      "confidence": "medium"
+    },
+    {
+      "member": "Hans",
+      "role": "drums live",
+      "category": "cymbals",
+      "brand": "Istanbul Mehmet",
+      "model": "20in Custom ride",
+      "relationship": "seen_using",
+      "source": "https://www.bonedo.de/?p=2622179",
+      "confidence": "medium"
+    },
+    {
+      "member": "Hans",
+      "role": "drums live",
+      "category": "cymbals",
+      "brand": "Istanbul Mehmet",
+      "model": "18in X-Metal china",
+      "relationship": "seen_using",
+      "source": "https://www.bonedo.de/?p=2622179",
+      "confidence": "medium"
+    },
+    {
+      "member": "Hans",
+      "role": "drums live",
+      "category": "drumheads",
+      "brand": "Code Drumheads",
+      "model": "Generator/DNA (toms), Code Zero/Generator 3 (snare), Blast coated (kick)",
+      "relationship": "seen_using",
+      "source": "https://www.bonedo.de/?p=2622179",
+      "confidence": "medium"
+    },
+    {
+      "member": "Hans",
+      "role": "drums live",
+      "category": "sticks",
+      "brand": "Los Cabos",
+      "model": "55AB",
+      "relationship": "seen_using",
+      "source": "https://www.bonedo.de/?p=2622179",
+      "confidence": "medium"
+    },
+    {
+      "member": "Hans",
+      "role": "drums live",
+      "category": "other",
+      "brand": "Yamaha",
+      "model": "EAD10",
+      "relationship": "seen_using",
+      "source": "https://www.bonedo.de/?p=2622179",
+      "confidence": "medium"
+    }
+  ],
+  "melechesh": [
+    {
+      "member": "Ashmedi",
+      "role": "vocals, guitar",
+      "category": "guitar",
+      "brand": "Fernandes",
+      "model": "Vortex Scimitar 12-string DLX",
+      "relationship": "signature_model",
+      "source": "https://www.nuclearblast.com/blogs/news/melechesh-ashmedi-signature-12-string-guitar-2893848",
+      "confidence": "medium"
+    },
+    {
+      "member": "Ashmedi",
+      "role": "vocals, guitar",
+      "category": "pickups",
+      "brand": "EMG",
+      "model": "81",
+      "relationship": "seen_using",
+      "source": "https://www.nuclearblast.com/blogs/news/melechesh-ashmedi-signature-12-string-guitar-2893848",
+      "confidence": "medium"
+    }
+  ],
+  "omnium-gatherum": [
+    {
+      "member": "Markus Vanhala",
+      "role": "guitar",
+      "category": "guitar",
+      "brand": "Jackson",
+      "model": "USA RR1 Randy Rhoads",
+      "relationship": "seen_using",
+      "source": "https://equipboard.com/pros/markus-vanhala",
+      "confidence": "medium"
+    },
+    {
+      "member": "Markus Vanhala",
+      "role": "guitar",
+      "category": "guitar",
+      "brand": "Jackson",
+      "model": "Stars RR-J2SP",
+      "relationship": "seen_using",
+      "source": "https://equipboard.com/pros/markus-vanhala",
+      "confidence": "medium"
+    },
+    {
+      "member": "Markus Vanhala",
+      "role": "guitar",
+      "category": "guitar",
+      "brand": "Jackson",
+      "model": "Randy Rhoads Custom Polka Dot V",
+      "relationship": "seen_using",
+      "source": "https://equipboard.com/pros/markus-vanhala",
+      "confidence": "medium"
+    },
+    {
+      "member": "Markus Vanhala",
+      "role": "guitar",
+      "category": "amp",
+      "brand": "Mesa/Boogie",
+      "model": "Single Rectifier 50W / Dual Rectifier 100W heads",
+      "relationship": "seen_using",
+      "source": "https://equipboard.com/pros/markus-vanhala",
+      "confidence": "medium"
+    },
+    {
+      "member": "Markus Vanhala",
+      "role": "guitar",
+      "category": "pickups",
+      "brand": "Seymour Duncan",
+      "model": "SH-4 JB / SH-2N Jazz",
+      "relationship": "seen_using",
+      "source": "https://equipboard.com/pros/markus-vanhala",
+      "confidence": "medium"
+    },
+    {
+      "member": "Markus Vanhala",
+      "role": "guitar",
+      "category": "effects",
+      "brand": "Boss",
+      "model": "HM-2 Heavy Metal",
+      "relationship": "seen_using",
+      "source": "https://equipboard.com/pros/markus-vanhala",
+      "confidence": "medium"
+    },
+    {
+      "member": "Markus Vanhala",
+      "role": "guitar",
+      "category": "strings",
+      "brand": "S.I.T.",
+      "model": "S1150 Power Wound Nickel 11-50",
+      "relationship": "seen_using",
+      "source": "https://equipboard.com/pros/markus-vanhala",
+      "confidence": "medium"
+    },
+    {
+      "member": "Markus Vanhala",
+      "role": "guitar",
+      "category": "other",
+      "brand": "Dunlop",
+      "model": "Jazz III XL picks",
+      "relationship": "seen_using",
+      "source": "https://equipboard.com/pros/markus-vanhala",
+      "confidence": "medium"
+    }
+  ],
+  "soilwork": [
+    {
+      "member": "Sylvain Coudret",
+      "role": "guitar",
+      "category": "guitar",
+      "brand": "ESP",
+      "model": "Horizon / Horizon Custom",
+      "relationship": "seen_using",
+      "source": "https://www.premierguitar.com/artists/soilwork-the-metal-majestic",
+      "confidence": "low"
+    },
+    {
+      "member": "Sylvain Coudret",
+      "role": "guitar",
+      "category": "guitar",
+      "brand": "Mayones",
+      "model": "Regius 6 Custom",
+      "relationship": "seen_using",
+      "source": "https://www.premierguitar.com/artists/soilwork-the-metal-majestic",
+      "confidence": "low"
+    },
+    {
+      "member": "Sylvain Coudret",
+      "role": "guitar",
+      "category": "pickups",
+      "brand": "DiMarzio",
+      "model": "D Activator (bridge) / The Chopper (neck); also EMG 57/66 in another ESP",
+      "relationship": "seen_using",
+      "source": "https://www.premierguitar.com/artists/soilwork-the-metal-majestic",
+      "confidence": "low"
+    },
+    {
+      "member": "Sylvain Coudret",
+      "role": "guitar",
+      "category": "amp",
+      "brand": "Blackstar",
+      "model": "HT Metal 100",
+      "relationship": "seen_using",
+      "source": "https://www.premierguitar.com/artists/soilwork-the-metal-majestic",
+      "confidence": "low"
+    },
+    {
+      "member": "Sylvain Coudret",
+      "role": "guitar",
+      "category": "effects",
+      "brand": "Maxon",
+      "model": "OD808 (plus MXR Carbon Copy, MXR Noise Gate, Dunlop Dimebag Cry Baby, MXR Phase 90)",
+      "relationship": "seen_using",
+      "source": "https://www.premierguitar.com/artists/soilwork-the-metal-majestic",
+      "confidence": "low"
+    },
+    {
+      "member": "Sylvain Coudret",
+      "role": "guitar",
+      "category": "strings",
+      "brand": "Dunlop",
+      "model": "12-60 / 11-60 sets; Dunlop .96mm picks",
+      "relationship": "seen_using",
+      "source": "https://www.premierguitar.com/artists/soilwork-the-metal-majestic",
+      "confidence": "low"
+    }
+  ],
+  "tyr": [
+    {
+      "member": "Heri Joensen",
+      "role": "vocals/guitar",
+      "category": "guitar",
+      "brand": "Ragnarök",
+      "model": "Mjölnir HJ7",
+      "relationship": "seen_using",
+      "source": "https://equipboard.com/pros/heri-joensen",
+      "confidence": "medium"
+    }
+  ],
+  "vreid": [
+    {
+      "member": "Stian Bakketeig",
+      "role": "guitar",
+      "category": "guitar",
+      "brand": "ESP",
+      "model": "LTD EC-1000 (Deluxe, gloss black)",
+      "relationship": "seen_using",
+      "source": "https://equipboard.com/pros/stian-bakketeig",
+      "confidence": "medium"
+    }
+  ],
+  "wintersun": [
+    {
+      "member": "Kai Hahto",
+      "role": "drums",
+      "category": "drums",
+      "brand": "Pearl",
+      "model": "Masterworks custom (2x22x20 BD, 10/12 toms, 16/18 floors, 20x14 gong drum)",
+      "relationship": "endorsement",
+      "source": "https://pearldrum.com/en/artist/kai-hahto/13196",
+      "confidence": "high"
+    },
+    {
+      "member": "Kai Hahto",
+      "role": "drums",
+      "category": "drums",
+      "brand": "Pearl",
+      "model": "Hybrid Exotic Vector Cast snare 14x6.5",
+      "relationship": "endorsement",
+      "source": "https://pearldrum.com/en/artist/kai-hahto/13196",
+      "confidence": "high"
+    },
+    {
+      "member": "Kai Hahto",
+      "role": "drums",
+      "category": "drum hardware",
+      "brand": "Pearl",
+      "model": "Demon Chain P-3000C pedals, H-2050 hi-hat, DR-501C Icon racks",
+      "relationship": "endorsement",
+      "source": "https://pearldrum.com/en/artist/kai-hahto/13196",
+      "confidence": "high"
+    },
+    {
+      "member": "Kai Hahto",
+      "role": "drums",
+      "category": "cymbals",
+      "brand": "Sihi",
+      "model": "",
+      "relationship": "endorsement",
+      "source": "https://en.wikipedia.org/wiki/Kai_Hahto",
+      "confidence": "low"
+    },
+    {
+      "member": "Kai Hahto",
+      "role": "drums",
+      "category": "sticks",
+      "brand": "Balbex",
+      "model": "",
+      "relationship": "endorsement",
+      "source": "https://en.wikipedia.org/wiki/Kai_Hahto",
+      "confidence": "low"
+    },
+    {
+      "member": "Teemu Mäntysaari",
+      "role": "guitar",
+      "category": "strings",
+      "brand": "D'Addario",
+      "model": "NYXL1052 10-52",
+      "relationship": "endorsement",
+      "source": "https://www.daddario.com/pages/artists/teemu-mantysaari",
+      "confidence": "high"
+    },
+    {
+      "member": "Teemu Mäntysaari",
+      "role": "guitar",
+      "category": "guitar",
+      "brand": "Ibanez",
+      "model": "LA Custom Shop RGA; JBM100; Jem 555",
+      "relationship": "seen_using",
+      "source": "https://equipboard.com/pros/teemu-mantysaari",
+      "confidence": "medium"
+    },
+    {
+      "member": "Teemu Mäntysaari",
+      "role": "guitar",
+      "category": "effects",
+      "brand": "Neural DSP",
+      "model": "Quad Cortex",
+      "relationship": "seen_using",
+      "source": "https://equipboard.com/pros/teemu-mantysaari",
+      "confidence": "medium"
+    },
+    {
+      "member": "Jari Mäenpää",
+      "role": "vocals/guitar",
+      "category": "guitar",
+      "brand": "Ibanez",
+      "model": "LACS RGD Custom; JEM7V; PGM301",
+      "relationship": "seen_using",
+      "source": "https://equipboard.com/pros/jari-maenpaa",
+      "confidence": "medium"
+    },
+    {
+      "member": "Jari Mäenpää",
+      "role": "vocals/guitar",
+      "category": "guitar",
+      "brand": "Aristides",
+      "model": "060 / 060 Custom / 060r",
+      "relationship": "seen_using",
+      "source": "https://equipboard.com/pros/jari-maenpaa",
+      "confidence": "medium"
+    },
+    {
+      "member": "Jari Mäenpää",
+      "role": "vocals/guitar",
+      "category": "guitar",
+      "brand": "Solar",
+      "model": "A1.6FBB-29",
+      "relationship": "seen_using",
+      "source": "https://equipboard.com/pros/jari-maenpaa",
+      "confidence": "medium"
+    },
+    {
+      "member": "Jari Mäenpää",
+      "role": "vocals/guitar",
+      "category": "amp",
+      "brand": "Fractal Audio",
+      "model": "Axe-Fx II",
+      "relationship": "seen_using",
+      "source": "https://equipboard.com/pros/jari-maenpaa",
+      "confidence": "medium"
+    }
   ]
 };

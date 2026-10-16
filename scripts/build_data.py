@@ -54,6 +54,9 @@ def clean_themes(v):
     return out
 
 def clean_status(v):
+    # Keep a short "future uncertain" note; other parentheticals are research notes.
+    if re.search(r"\(\s*future uncertain\s*\)", v, re.I):
+        return re.sub(r"\s*\([^)]*\)", "", v).strip() + ", future uncertain"
     return re.sub(r"\s*\([^)]*\)", "", v).strip()
 
 def slugify(s):
