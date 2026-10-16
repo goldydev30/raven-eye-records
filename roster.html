@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>Artists | Raven Eye Records</title>
+<meta name="description" content="The artists Raven Eye Records promotes, by country, style and label.">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="assets/img/sigil.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=UnifrakturMaguntia&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+<script src="data/bands.js"></script>
+<script src="data/codex.js"></script>
+<script src="data/news.js"></script>
+<script src="assets/js/site.js"></script>
+</head>
+<body>
+<main>
+
+<section class="block"><div class="wrap">
+  <span class="eyebrow">Artists</span>
+  <h1>The roster</h1>
+  <p class="muted" style="max-width:62ch">The bands Raven Eye champions. Labels listed are each band's current label per Encyclopaedia Metallum; Raven Eye promotes and references them, and a band is only "on Raven Eye" when it says so.</p>
+  <div class="filters">
+    <div class="search"><label class="sr-only" for="q">Search</label><input id="q" type="search" placeholder="Search bands, themes, labels..."></div>
+    <div><label class="sr-only" for="country">Country</label><select id="country"></select></div>
+    <div><label class="sr-only" for="genre">Style</label><select id="genre"></select></div>
+    <div><label class="sr-only" for="label">Label</label><select id="label"></select></div>
+  </div>
+  <div class="count" id="count"></div>
+  <div class="grid bands" id="roster"></div>
+</div></section>
+
+</main>
+</body>
+</html>
