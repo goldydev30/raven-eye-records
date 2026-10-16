@@ -3,7 +3,7 @@ window.RER_NEWS = [
   {
     date: "2026-10-16",
     title: "Raven Eye Records takes flight",
-    body: "A new grassroots label and lyrics compendium for black, pagan, folk and melodic extreme metal opens its doors.",
+    body: "A new grassroots label and lyrics codex for black, pagan, folk and melodic extreme metal opens its doors.",
     link: "about.html"
   },
   {

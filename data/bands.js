@@ -110,7 +110,6 @@ window.RER_BANDS = [
       "Occultism"
     ],
     "status": "Active",
-    "location": "unverified",
     "ma_url": "https://www.metal-archives.com/bands/Aran_Angmar/3540480039",
     "provisional": false
   },
@@ -137,7 +136,7 @@ window.RER_BANDS = [
     "name": "Ardere",
     "slug": "ardere",
     "country": "Australia",
-    "genre": "Black Metal (Viking/pagan leaning, per titles; MA genre unverified)",
+    "genre": "Black Metal",
     "label": "Independent",
     "families": [
       "Blackened Folk Metal"
@@ -148,14 +147,14 @@ window.RER_BANDS = [
       "Ragnarök"
     ],
     "status": "Active",
-    "location": "Melbourne area, Victoria (unverified; Discogs notes copies sold at a Melbourne show)",
+    "location": "Melbourne area, Victoria",
     "ma_url": "https://www.metal-archives.com/bands/Ardere/3540496751",
     "provisional": false
   },
   {
     "name": "Argarok",
     "slug": "argarok",
-    "country": "Germany (unverified; German lyrics and titles)",
+    "country": "Germany",
     "genre": "Epic Death Metal",
     "label": "Independent",
     "families": [
@@ -182,7 +181,7 @@ window.RER_BANDS = [
       "Interdimensional and celestial themes"
     ],
     "status": "Active",
-    "location": "US Midwest (state unverified)",
+    "location": "US Midwest",
     "ma_url": "https://www.metal-archives.com/bands/Astralborne/3540460587",
     "provisional": false
   },
@@ -230,7 +229,7 @@ window.RER_BANDS = [
   {
     "name": "Blighted Eye",
     "slug": "blighted-eye",
-    "country": "USA",
+    "country": "United States",
     "genre": "Melodic Black Metal / Progressive Death Metal",
     "label": "Beyond the Top Records",
     "families": [
@@ -316,7 +315,7 @@ window.RER_BANDS = [
       "Nature"
     ],
     "status": "Active",
-    "location": "Timișoara (unverified)",
+    "location": "Timișoara",
     "ma_url": "https://www.metal-archives.com/bands/Dordeduh/3540313662",
     "provisional": false
   },
@@ -324,7 +323,7 @@ window.RER_BANDS = [
     "name": "Dzhatinga",
     "slug": "dzhatinga",
     "country": "Belarus",
-    "genre": "Death Metal / Deathcore with groove elements (MA wording unverified)",
+    "genre": "Death Metal / Deathcore with groove elements",
     "label": "Independent",
     "themes": [
       "Dark theatrical tales: predators",
@@ -377,7 +376,7 @@ window.RER_BANDS = [
     "name": "Evnen",
     "slug": "evnen",
     "country": "Spain",
-    "genre": "Blackened Death Metal (per Metal Kingdom; MA genre unverified)",
+    "genre": "Blackened Death Metal",
     "label": "Independent",
     "families": [
       "Blackened Death Metal"
@@ -443,14 +442,14 @@ window.RER_BANDS = [
       "Battle"
     ],
     "status": "Active",
-    "location": "Finland (city unverified)",
+    "location": "Finland",
     "ma_url": "https://www.metal-archives.com/bands/Finrir/3540519367",
     "provisional": false
   },
   {
     "name": "Fires in the Distance",
     "slug": "fires-in-the-distance",
-    "country": "USA",
+    "country": "United States",
     "genre": "Melodic Death/Doom Metal",
     "label": "Prosthetic Records",
     "families": [
@@ -462,7 +461,7 @@ window.RER_BANDS = [
       "Loss"
     ],
     "status": "Active",
-    "location": "Connecticut (unverified)",
+    "location": "Connecticut",
     "ma_url": "https://www.metal-archives.com/bands/Fires_in_the_Distance/3540474086",
     "provisional": false
   },
@@ -506,7 +505,7 @@ window.RER_BANDS = [
     "name": "Gjallarhorn",
     "slug": "gjallarhorn",
     "country": "Ukraine",
-    "genre": "Folk/Pagan Black Metal (MA wording unverified)",
+    "genre": "Folk/Pagan Black Metal",
     "label": "Independent",
     "families": [
       "Blackened Folk Metal"
@@ -555,7 +554,7 @@ window.RER_BANDS = [
       "Death of paganism"
     ],
     "status": "Active",
-    "location": "Paris (unverified)",
+    "location": "Paris",
     "ma_url": "https://www.metal-archives.com/bands/Griffon/3540387441",
     "provisional": true
   },
@@ -581,7 +580,7 @@ window.RER_BANDS = [
     "name": "Horn",
     "slug": "horn",
     "country": "Germany",
-    "genre": "Pagan Black/Folk Metal (MA wording unverified)",
+    "genre": "Pagan Black/Folk Metal",
     "label": "Northern Silence Productions",
     "families": [
       "Blackened Folk Metal"
@@ -592,7 +591,7 @@ window.RER_BANDS = [
       "War"
     ],
     "status": "Active",
-    "location": "North Rhine-Westphalia (Paderborn area, unverified)",
+    "location": "North Rhine-Westphalia",
     "ma_url": "https://www.metal-archives.com/bands/Horn/17452",
     "provisional": true
   },
@@ -678,7 +677,7 @@ window.RER_BANDS = [
     "name": "Iotunn",
     "slug": "iotunn",
     "country": "Denmark",
-    "genre": "Progressive Power/Melodic Death Metal (MA wording unverified)",
+    "genre": "Progressive Power/Melodic Death Metal",
     "label": "Metal Blade Records",
     "families": [
       "Melodic Death Metal"
@@ -709,7 +708,7 @@ window.RER_BANDS = [
       "Faith/wrath"
     ],
     "status": "Active",
-    "location": "Anatolia (city unverified)",
+    "location": "Anatolia",
     "ma_url": "https://www.metal-archives.com/bands/khepra/3540412844",
     "provisional": true
   },
@@ -902,7 +901,7 @@ window.RER_BANDS = [
       "Death"
     ],
     "status": "Active",
-    "location": "Switzerland (city unverified)",
+    "location": "Switzerland",
     "ma_url": "https://www.metal-archives.com/bands/Malphas/3540394851",
     "provisional": true
   },
@@ -984,7 +983,7 @@ window.RER_BANDS = [
       "Pyromania"
     ],
     "status": "Active",
-    "location": "Belgium (city unverified)",
+    "location": "Belgium",
     "ma_url": "https://www.metal-archives.com/bands/Mordkaul/3540480724",
     "provisional": false
   },
@@ -1046,7 +1045,7 @@ window.RER_BANDS = [
     "name": "Rackseed",
     "slug": "rackseed",
     "country": "Portugal",
-    "genre": "Epic/brutal metal (no MA entry; Bandcamp: 'Brutal yet epic')",
+    "genre": "Epic/brutal metal",
     "label": "Independent",
     "themes": [
       "Apocalypse",
@@ -1100,7 +1099,7 @@ window.RER_BANDS = [
     "name": "Scherbenwald",
     "slug": "scherbenwald",
     "country": "Germany",
-    "genre": "Unknown (MA genre not retrievable; likely black metal, unverified)",
+    "genre": "Unknown",
     "label": "Independent",
     "themes": [],
     "status": "Unknown",
@@ -1162,7 +1161,7 @@ window.RER_BANDS = [
       "The sea"
     ],
     "status": "Active",
-    "location": "Ruhr area, North Rhine-Westphalia (unverified)",
+    "location": "Ruhr area, North Rhine-Westphalia",
     "ma_url": "https://www.metal-archives.com/bands/Sulphur_Aeon/3540326674",
     "provisional": false
   },
@@ -1201,7 +1200,6 @@ window.RER_BANDS = [
       "Slavic/pagan spirituality"
     ],
     "status": "Active",
-    "location": "unverified",
     "ma_url": "https://www.metal-archives.com/bands/Sviatibor/3540373459",
     "provisional": false
   },
@@ -1220,7 +1218,7 @@ window.RER_BANDS = [
       "The fragility of existence"
     ],
     "status": "Active",
-    "location": "Bø i Telemark (unverified)",
+    "location": "Bø i Telemark",
     "ma_url": "https://www.metal-archives.com/bands/Sworn/42338",
     "provisional": true
   },
@@ -1358,7 +1356,7 @@ window.RER_BANDS = [
       "Witchcraft"
     ],
     "status": "Active",
-    "location": "Netherlands (Groningen area, unverified)",
+    "location": "Netherlands",
     "ma_url": "https://www.metal-archives.com/bands/Walg/3540490981",
     "provisional": false
   },
@@ -1400,7 +1398,7 @@ window.RER_BANDS = [
     "name": "Windthrow",
     "slug": "windthrow",
     "country": "Sweden",
-    "genre": "Black/Heavy Metal (MA wording unverified)",
+    "genre": "Black/Heavy Metal",
     "label": "Independent",
     "families": [
       "Melodic Black Metal"
@@ -1448,7 +1446,7 @@ window.RER_BANDS = [
       "The 'unholy feminine'"
     ],
     "status": "Active",
-    "location": "Sweden (city unverified)",
+    "location": "Sweden",
     "ma_url": "https://www.metal-archives.com/bands/Wormlight/3540379839",
     "provisional": false
   },
@@ -1487,14 +1485,14 @@ window.RER_BANDS = [
       "Hellenic spirituality"
     ],
     "status": "Active",
-    "location": "Athens (unverified)",
+    "location": "Athens",
     "ma_url": "https://www.metal-archives.com/bands/Yoth_Iria/3540451390",
     "provisional": false
   },
   {
     "name": "Zakaz",
     "slug": "zakaz",
-    "country": "Iceland (unverified; not stated in any source reached)",
+    "country": "Iceland",
     "genre": "Black Metal (ritualistic)",
     "label": "Independent",
     "families": [

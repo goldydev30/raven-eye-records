@@ -1,6 +1,6 @@
 # Raven Eye Records
 
-Website for **Raven Eye Records**, a grassroots black metal label and lyrics compendium. The layout borrows from established metal labels (Metal Blade, Prophecy Productions, Nuclear Blast): a sticky header, a hero, a featured-artist grid, news dispatches, a filterable roster and per-artist pages.
+Website for **Raven Eye Records**, a grassroots black metal label and lyrics codex. The layout borrows from established metal labels (Metal Blade, Prophecy Productions, Nuclear Blast): a sticky header, a hero, a featured-artist grid, news dispatches, a filterable roster and per-artist pages.
 
 It is a plain static site with no build step. Open `index.html` in a browser, or serve the folder:
 
@@ -15,7 +15,7 @@ python3 -m http.server 8000
 | `index.html` | Home: hero, featured artists (rotates daily), label pillars, latest news |
 | `roster.html` | All artists, searchable and filterable by country, genre family and label |
 | `band.html?b=<slug>` | Artist page: country, genre, current label, lyrical themes, Metallum link, kindred bands |
-| `lyrics.html` | Lyrics Compendium: themes atlas and the codex of excerpts/commentary |
+| `lyrics.html` | Lyrics Codex: themes atlas plus lyric excerpts and commentary |
 | `arsenal.html` | The Arsenal: gear behind the roster, with fan submissions |
 | `news.html` | News |
 | `about.html` | Label manifesto |

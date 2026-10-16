@@ -98,6 +98,15 @@ def main(path):
                     b[key] = raw.lower() in ("1", "true", "yes", "y")
                 elif key == "label":
                     b[key] = clean_label(raw)
+                elif key in ("genre", "country", "location"):
+                    # Research notes like "(unverified; ...)" stay in the CSV, not on the site.
+                    v = re.sub(r"\s*\([^)]*(unverified|wording|MA |Discogs|likely)[^)]*\)", "", raw, flags=re.I).strip()
+                    if key == "country":
+                        v = {"USA": "United States", "US": "United States", "UK": "United Kingdom"}.get(v, v)
+                    if v and v.lower() != "unverified":
+                        b[key] = v
+                    else:
+                        b.pop(key, None)
                 elif key == "status":
                     b[key] = clean_status(raw)
                 else:

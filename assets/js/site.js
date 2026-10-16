@@ -17,7 +17,7 @@
   var NAV = [
     ["index.html", "Home"],
     ["roster.html", "Artists"],
-    ["lyrics.html", "Lyrics Compendium"],
+    ["lyrics.html", "Lyrics Codex"],
     ["arsenal.html", "Arsenal"],
     ["news.html", "News"],
     ["about.html", "About"],
@@ -91,11 +91,11 @@
     footer.className = "site";
     footer.innerHTML = '<div class="wrap"><div class="cols">' +
       '<div><a class="brand" href="index.html">' + SIGIL + '<span><span class="name">Raven Eye</span><span class="sub">Records</span></span></a>' +
-      '<p style="margin-top:1rem">An independent label and lyrics compendium for black, pagan, folk and melodic extreme metal. The words matter here.</p>' +
+      '<p style="margin-top:1rem">An independent label and lyrics codex for black, pagan, folk and melodic extreme metal. The words matter here.</p>' +
       '<form class="newsletter" onsubmit="event.preventDefault();this.innerHTML=\'<span>Thank you. The ravens will find you.</span>\'">' +
       '<label class="sr-only" for="nl">Email</label><input id="nl" type="email" placeholder="Your email" required><button class="btn blood" type="submit">Join</button></form></div>' +
       '<div><h4>Label</h4><ul><li><a href="about.html">About</a></li><li><a href="news.html">News</a></li><li><a href="submit.html">Demo submissions</a></li></ul></div>' +
-      '<div><h4>Explore</h4><ul><li><a href="roster.html">Artists</a></li><li><a href="lyrics.html">Lyrics Compendium</a></li><li><a href="lyrics.html#themes">Lyrical themes</a></li></ul></div>' +
+      '<div><h4>Explore</h4><ul><li><a href="roster.html">Artists</a></li><li><a href="lyrics.html">Lyrics Codex</a></li><li><a href="lyrics.html#themes">Lyrical themes</a></li></ul></div>' +
       '<div><h4>Elsewhere</h4><ul><li><a href="https://www.metal-archives.com" rel="noopener">Encyclopaedia Metallum</a></li><li><a href="https://bandcamp.com/tag/black-metal" rel="noopener">Bandcamp</a></li></ul></div>' +
       '</div><div class="fine"><span>&copy; ' + new Date().getFullYear() + ' Raven Eye Records</span>' +
       '<span>Band names and marks belong to their owners. Lyrics are quoted only with permission.</span></div></div>';
