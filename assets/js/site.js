@@ -204,19 +204,23 @@
   }
 
   /* ---------- pages ---------- */
+  // Featured on the homepage, in this order. Searching swaps in matches from the whole roster, A to Z.
+  var FEATURED = ["insomnium", "amorphis", "amon-amarth", "darconigan", "varmia", "walg", "soilwork", "wormlight", "kalmah", "flamen"];
   function renderHome() {
     var el = document.getElementById("featured");
     if (el) {
-      var list = bands();
-      var featured = list.filter(function (b) { return b.featured; });
-      if (featured.length < 10) {
-        // Stable daily rotation through the roster.
-        var day = Math.floor(Date.now() / 864e5);
-        var rest = list.filter(function (b) { return !b.featured; });
-        for (var i = 0; featured.length < 10 && i < rest.length; i++) featured.push(rest[(day * 7 + i * 11) % rest.length]);
-        featured = featured.filter(function (b, i, a) { return a.indexOf(b) === i; });
-      }
-      el.innerHTML = featured.slice(0, 10).map(bandCard).join("");
+      var featured = FEATURED.map(findBand).filter(Boolean);
+      var q = document.getElementById("fq"), empty = document.getElementById("featured-empty");
+      var draw = function () {
+        var term = q ? q.value.trim().toLowerCase() : "";
+        var list = !term ? featured : bands().slice()
+          .filter(function (b) { return [b.name, b.genre, b.country, b.label, (b.themes || []).join(" ")].join(" ").toLowerCase().indexOf(term) > -1; })
+          .sort(function (x, y) { return x.name.localeCompare(y.name); });
+        el.innerHTML = list.map(bandCard).join("");
+        if (empty) empty.hidden = list.length > 0;
+      };
+      if (q) q.addEventListener("input", draw);
+      draw();
     }
     var stat = document.getElementById("roster-count");
     if (stat) stat.textContent = bands().length;
