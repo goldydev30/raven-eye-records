@@ -66,21 +66,15 @@ nav.main a:hover, nav.main a[aria-current="page"] { color: var(--bone); border-b
 }
 
 /* ---------- hero ---------- */
-.hero { position: relative; overflow: hidden; border-bottom: 1px solid var(--line);
-  background:
-    radial-gradient(ellipse at 70% 35%, rgba(120,8,10,.38), transparent 55%),
-    radial-gradient(ellipse at 50% 120%, rgba(60,0,0,.5), transparent 60%),
-    radial-gradient(ellipse at 20% 80%, rgba(159,179,200,.08), transparent 50%),
-    linear-gradient(180deg, #0b0607, #030203);
-}
+.hero { position: relative; overflow: hidden; border-bottom: 1px solid var(--line); background: #020102; }
 .hero::after { content: ""; position: absolute; inset: 0; pointer-events: none;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.07'/%3E%3C/svg%3E"); }
 .hero .wrap { position: relative; z-index: 1; display: grid; grid-template-columns: 1.2fr .8fr; gap: 2rem; align-items: center; padding-top: clamp(3rem, 8vw, 6.5rem); padding-bottom: clamp(3rem, 8vw, 6.5rem); }
 .hero h1 { font-family: var(--masthead); font-weight: 400; letter-spacing: .02em; text-shadow: 0 0 40px rgba(110,11,11,.55); line-height: 1.05; font-size: clamp(2.6rem, 6vw, 4.6rem); margin-bottom: .2em; }
 @media (min-width: 761px) { .hero h1 { white-space: nowrap; } }
 .hero .lede { font-size: 1.2rem; max-width: 36ch; color: var(--text); }
-.hero .sigil { width: 100%; max-width: 400px; aspect-ratio: 1; justify-self: center; border-radius: 50%; box-shadow: 0 0 80px rgba(110,11,11,.35); }
-.about-grid .sigil { aspect-ratio: 1; border-radius: 50%; box-shadow: 0 0 60px rgba(110,11,11,.3); }
+.hero .sigil { width: 100%; max-width: 400px; aspect-ratio: 1; justify-self: center; cursor: crosshair; }
+.about-grid .sigil { aspect-ratio: 1; }
 @media (max-width: 760px) { .hero .wrap { grid-template-columns: 1fr; } .hero .sigil { max-width: 200px; order: -1; } }
 
 .btn { display: inline-block; font-family: var(--display); text-transform: uppercase; letter-spacing: .2em; font-size: .75rem; padding: .85rem 1.4rem; border: 1px solid var(--bone); color: var(--bone); background: transparent; cursor: pointer; transition: background .2s, color .2s, border-color .2s; }
@@ -205,14 +199,9 @@ body { background: radial-gradient(ellipse at 50% -10%, rgba(90,6,8,.18), transp
 .band-card:hover, .theme-card:hover { box-shadow: 0 0 28px rgba(110,11,11,.25); }
 ::selection { background: var(--blood); color: #fff; }
 
-/* ---------- logo animation: turning letter ring, breathing eye ---------- */
-.rer-ring .rer-letters { transform-origin: 200px 200px; animation: rer-spin 120s linear infinite; }
-.rer-ring .rer-eye-glow, .rer-ring .rer-glint { transform-box: fill-box; transform-origin: center; }
-.rer-ring .rer-eye-glow { animation: rer-glow 5.5s ease-in-out infinite; }
-.rer-ring .rer-eye-core { animation: rer-core 5.5s ease-in-out infinite; }
-.rer-ring .rer-glint { animation: rer-glint 9s ease-in-out infinite; }
-@keyframes rer-spin { to { transform: rotate(360deg); } }
-@keyframes rer-glow { 0%, 100% { opacity: .45; transform: scale(.8); } 50% { opacity: 1; transform: scale(1.35); } }
-@keyframes rer-core { 0%, 100% { fill: #ffd36a; } 50% { fill: #fff6d0; } }
-@keyframes rer-glint { 0%, 70%, 100% { opacity: 0; transform: scale(.3) rotate(0deg); } 78% { opacity: 1; transform: scale(1.2) rotate(45deg); } 86% { opacity: 0; transform: scale(.4) rotate(90deg); } }
-@media (prefers-reduced-motion: reduce) { .rer-ring * { animation: none !important; } }
+/* ---------- logo: the raven's eye blinks on hover ---------- */
+.rer-eye .rer-lid-top, .rer-eye .rer-lid-bottom { transition: transform .11s ease-in; }
+.rer-eye.closed .rer-lid-top { transform: translateY(46px); }
+.rer-eye.closed .rer-lid-bottom { transform: translateY(-8px); }
+.rer-eye.closed .rer-lid-top, .rer-eye.closed .rer-lid-bottom { transition-duration: .07s; }
+@media (prefers-reduced-motion: reduce) { .rer-eye .rer-lid-top, .rer-eye .rer-lid-bottom { transition: none; } }

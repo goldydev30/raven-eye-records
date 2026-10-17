@@ -181,8 +181,8 @@
   }
 
   /* ---------- the logo ----------
-     Inline copies of the raven ring (ids namespaced per copy). The rings turn and the eye
-     glows through CSS animations in style.css. */
+     Inline copies of the raven's eye (ids namespaced per copy). It blinks when hovered or
+     focused; the lids move through CSS in style.css. */
   var logoN = 0;
   function mountLogos() {
     document.querySelectorAll("[data-logo]:not([data-mounted])").forEach(function (slot) {
@@ -190,7 +190,17 @@
       var n = ++logoN;
       slot.innerHTML = window.RER_LOGO.replace(/id="rer-/g, 'id="rer' + n + "-").replace(/url\(#rer-/g, "url(#rer" + n + "-");
       slot.setAttribute("data-mounted", "1");
+      var eye = slot.querySelector(".rer-eye");
+      var host = slot.closest("a") || slot;
+      host.addEventListener("mouseenter", function () { blink(eye); });
+      host.addEventListener("focus", function () { blink(eye); });
+      host.addEventListener("touchstart", function () { blink(eye); }, { passive: true });
     });
+  }
+  function blink(eye) {
+    if (eye.classList.contains("closed")) return;
+    eye.classList.add("closed");
+    setTimeout(function () { eye.classList.remove("closed"); }, 260);
   }
 
   /* ---------- pages ---------- */
