@@ -410,6 +410,15 @@
     ["uk", "Ukrainian", "Ukraine"]
   ];
   var TR_MAX_WORDS = 250;
+  // Address of the Cloudflare Worker that relays to Google Cloud Translation (see
+  // docs/translator-setup.md). Leave empty to use the free MyMemory service instead.
+  var TR_ENDPOINT = "";
+  function translateGoogle(text, from, to) {
+    var g = function (c) { return c === "nb" ? "no" : c; };
+    return fetch(TR_ENDPOINT, { method: "POST", headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ q: text, source: g(from), target: g(to) }) })
+      .then(function (r) { return r.json().then(function (d) { if (!r.ok || d.error) throw new Error(d.error || "The translation failed. Please try again."); return d.translation; }); });
+  }
   function wordCount(s) { var m = s.trim().match(/\S+/g); return m ? m.length : 0; }
   function utf8Len(s) { return unescape(encodeURIComponent(s)).length; }
   function trChunks(text) {
@@ -489,9 +498,10 @@
       if (!text) return;
       if (from.value === to.value) return show("Choose two different languages.", true);
       go.disabled = true; status.textContent = "Translating...";
-      var pieces = trChunks(input.value.replace(/^\s+|\s+$/g, ""));
-      Promise.all(pieces.map(function (p) { return translatePiece(p, from.value, to.value); }))
-        .then(function (res) { show(res.join(""), false); status.textContent = ""; })
+      var clean = input.value.replace(/^\s+|\s+$/g, "");
+      (TR_ENDPOINT ? translateGoogle(clean, from.value, to.value)
+        : Promise.all(trChunks(clean).map(function (p) { return translatePiece(p, from.value, to.value); })).then(function (r) { return r.join(""); }))
+        .then(function (res) { show(res, false); status.textContent = ""; })
         .catch(function (err) {
           show(err && err.message && !/fetch|network|json/i.test(err.message) ? err.message : "The translator couldn't be reached. Check your connection and try again.", true);
           status.textContent = "";
