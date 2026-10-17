@@ -44,6 +44,7 @@ p { margin: 0 0 1em; }
 .topbar { background: #000; border-bottom: 1px solid var(--line); font-family: var(--display); font-size: .7rem; letter-spacing: .2em; text-transform: uppercase; }
 .topbar .wrap { display: flex; justify-content: space-between; gap: 1rem; padding-top: .45rem; padding-bottom: .45rem; color: var(--muted); }
 .topbar a { color: var(--muted); }
+.topbar a:hover, .topbar a[aria-current] { color: var(--bone); }
 
 header.site { position: sticky; top: 0; z-index: 50; background: rgba(5,4,5,.95); backdrop-filter: blur(6px); border-bottom: 1px solid var(--line); }
 header.site .wrap { display: flex; align-items: center; justify-content: space-between; gap: 1rem; min-height: 72px; }

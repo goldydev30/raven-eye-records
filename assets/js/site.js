@@ -3,12 +3,10 @@
   "use strict";
 
   var NAV = [
-    ["index.html", "Home"],
     ["roster.html", "Artists"],
     ["lyrics.html", "Codex"],
     ["armory.html", "Armory"],
     ["news.html", "News"],
-    ["about.html", "About"],
     ["submit.html", "Demos"]
   ];
 
@@ -143,8 +141,9 @@
     var here = location.pathname.split("/").pop() || "index.html";
     var top = document.createElement("div");
     top.className = "topbar";
-    top.innerHTML = '<div class="wrap"><span>Est. 2026</span>' +
-      '<span><a href="submit.html">Demo</a> &nbsp;/&nbsp; <a href="lyrics.html">Lyrics</a></span></div>';
+    var cur = function (f) { return f === here ? ' aria-current="page"' : ""; };
+    top.innerHTML = '<div class="wrap"><span>Established 2026</span>' +
+      '<span><a href="index.html"' + cur("index.html") + '>Home</a> &nbsp;/&nbsp; <a href="about.html"' + cur("about.html") + ">About</a></span></div>";
 
     var header = document.createElement("header");
     header.className = "site";
