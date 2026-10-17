@@ -207,3 +207,29 @@ body { background: radial-gradient(ellipse at 50% -10%, rgba(90,6,8,.18), transp
 .rer-eye.closed .rer-lid-bottom { transform: translateY(-92px); }
 .rer-eye.closed .rer-lid-top, .rer-eye.closed .rer-lid-bottom { transition-duration: .08s; }
 @media (prefers-reduced-motion: reduce) { .rer-eye .rer-lid-top, .rer-eye .rer-lid-bottom { transition: none; } }
+
+/* ---------- Codex translator ---------- */
+.tr-intro { margin: -.4rem 0 1.2rem; max-width: 60ch; }
+.tr { display: grid; gap: 1rem; }
+.tr-langs { display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); gap: .8rem; align-items: end; max-width: 640px; }
+.tr-field { display: grid; gap: .35rem; }
+.tr-field span { font-family: var(--display); font-size: .7rem; letter-spacing: .22em; text-transform: uppercase; color: var(--muted); }
+.tr select, .tr textarea { width: 100%; background: var(--panel); color: var(--bone); border: 1px solid var(--line); font-family: var(--serif); font-size: 1.05rem; border-radius: 0; }
+.tr select { padding: .65rem .7rem; }
+.tr select:focus, .tr textarea:focus, .tr-swap:focus-visible { outline: 1px solid var(--blood); border-color: var(--blood); }
+.tr-swap { background: none; border: 1px solid var(--line); color: var(--bone); font-size: 1.2rem; width: 2.8rem; height: 2.75rem; cursor: pointer; }
+.tr-swap:hover { border-color: var(--blood); }
+.tr-panes { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 1rem; }
+.tr-pane { display: grid; grid-template-rows: 1fr auto; gap: .6rem; min-width: 0; }
+.tr textarea { padding: .8rem .9rem; line-height: 1.55; resize: vertical; min-height: 11rem; }
+.tr-result { background: var(--panel); border: 1px solid var(--line); padding: .8rem .9rem; min-height: 11rem; line-height: 1.55; white-space: pre-wrap; overflow-wrap: anywhere; }
+.tr-error { color: #e07a72; margin: 0; }
+.tr-foot { display: flex; justify-content: space-between; align-items: center; gap: .8rem; }
+.tr-foot .btn { padding: .65rem 1.1rem; }
+.tr-foot .btn:disabled { opacity: .45; cursor: default; }
+.tr-foot .btn:disabled:hover { background: transparent; color: var(--bone); }
+.tr-foot .btn.blood:disabled:hover { background: var(--blood); color: var(--bone); }
+#tr-count { font-size: .95rem; color: var(--muted); font-variant-numeric: tabular-nums; }
+#tr-count.full { color: var(--blood-hi); }
+.tr-note { font-size: .9rem; margin: 0; }
+@media (max-width: 760px) { .tr-panes { grid-template-columns: 1fr; } }

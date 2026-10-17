@@ -28,6 +28,30 @@
   </div>
 </div></section>
 
+<section class="block" id="translator"><div class="wrap">
+  <div class="section-head"><div><span class="eyebrow">Tongues</span><h2>Translator</h2></div></div>
+  <p class="muted tr-intro">Paste a verse, up to 250 words, and translate it between the languages our bands write in.</p>
+  <form class="tr" id="tr-form" novalidate>
+    <div class="tr-langs">
+      <label class="tr-field"><span>From</span><select id="tr-from"></select></label>
+      <button type="button" class="tr-swap" id="tr-swap" aria-label="Swap languages" title="Swap languages">&#8644;</button>
+      <label class="tr-field"><span>To</span><select id="tr-to"></select></label>
+    </div>
+    <div class="tr-panes">
+      <div class="tr-pane">
+        <label class="sr-only" for="tr-in">Text to translate</label>
+        <textarea id="tr-in" rows="7" placeholder="Type or paste lyrics here..."></textarea>
+        <div class="tr-foot"><span id="tr-count">0 / 250 words</span><button class="btn blood" type="submit" id="tr-go">Translate</button></div>
+      </div>
+      <div class="tr-pane tr-out">
+        <div id="tr-out" aria-live="polite" class="tr-result"><span class="muted">The translation appears here.</span></div>
+        <div class="tr-foot"><span class="muted" id="tr-status"></span><button class="btn" type="button" id="tr-copy" disabled>Copy</button></div>
+      </div>
+    </div>
+    <p class="tr-note muted">Machine translation by MyMemory. Poetry and archaic wording may lose nuance, so treat it as a guide.</p>
+  </form>
+</div></section>
+
 <section class="block" id="themes"><div class="wrap">
   <div class="section-head"><div><span class="eyebrow">Atlas</span><h2>Lyrical themes</h2></div></div>
   <div id="theme-filter" style="margin-bottom:1.4rem"></div>

@@ -396,6 +396,111 @@
       (e.source ? '<p class="muted" style="font-size:.85rem">' + esc(e.source) + "</p>" : "") + "</article>";
   }
 
+  /* ---------- Codex translator ----------
+     Languages spoken in our bands' countries. Uses the free MyMemory API, which takes
+     about 500 bytes per request, so longer text is sent sentence by sentence. */
+  var TR_LANGS = [
+    ["hy", "Armenian", "Armenia"], ["be", "Belarusian", "Belarus"], ["da", "Danish", "Denmark"],
+    ["nl", "Dutch", "Netherlands, Belgium"], ["en", "English", "USA, UK, Canada, Australia, New Zealand"],
+    ["fo", "Faroese", "Faroe Islands"], ["fi", "Finnish", "Finland"], ["fr", "French", "France, Canada, Belgium, Switzerland"],
+    ["de", "German", "Germany, Austria, Switzerland"], ["el", "Greek", "Greece"], ["is", "Icelandic", "Iceland"],
+    ["it", "Italian", "Italy, Switzerland"], ["nb", "Norwegian", "Norway"], ["pl", "Polish", "Poland"],
+    ["pt", "Portuguese", "Portugal"], ["ro", "Romanian", "Romania"], ["sk", "Slovak", "Slovakia"],
+    ["es", "Spanish", "Spain, Ecuador"], ["sv", "Swedish", "Sweden"], ["tr", "Turkish", "Turkey"],
+    ["uk", "Ukrainian", "Ukraine"]
+  ];
+  var TR_MAX_WORDS = 250;
+  function wordCount(s) { var m = s.trim().match(/\S+/g); return m ? m.length : 0; }
+  function utf8Len(s) { return unescape(encodeURIComponent(s)).length; }
+  function trChunks(text) {
+    // Split into pieces under ~450 bytes, keeping sentences and lines together where possible.
+    var parts = text.match(/[^.!?\n]+[.!?]*\s*|\n+/g) || [text], out = [], cur = "";
+    parts.forEach(function (p) {
+      while (utf8Len(p) > 450) {          // a very long sentence: cut on a space
+        var cut = p.lastIndexOf(" ", 300); if (cut < 1) cut = 300;
+        if (cur) { out.push(cur); cur = ""; }
+        out.push(p.slice(0, cut)); p = p.slice(cut);
+      }
+      if (utf8Len(cur + p) > 450) { out.push(cur); cur = p; } else cur += p;
+    });
+    if (cur) out.push(cur);
+    return out;
+  }
+  function decodeEntities(s) { var t = document.createElement("textarea"); t.innerHTML = s; return t.value; }
+  function translatePiece(piece, from, to) {
+    if (!piece.trim()) return Promise.resolve(piece);
+    var lead = piece.match(/^\s*/)[0], trail = piece.match(/\s*$/)[0];
+    var url = "https://api.mymemory.translated.net/get?q=" + encodeURIComponent(piece.trim()) + "&langpair=" + from + "|" + to;
+    return fetch(url).then(function (r) { return r.json(); }).then(function (d) {
+      if (!d || String(d.responseStatus) !== "200" || !d.responseData) {
+        var why = d && d.responseDetails ? String(d.responseDetails) : "";
+        throw new Error(/QUOTA|LIMIT/i.test(why) || String(d && d.responseStatus) === "429"
+          ? "The free translation limit for today has been reached. Please try again tomorrow."
+          : "That language pair couldn't be translated. Try another pair.");
+      }
+      return lead + decodeEntities(d.responseData.translatedText) + trail;
+    });
+  }
+  function renderTranslator() {
+    var form = document.getElementById("tr-form");
+    if (!form) return;
+    var from = document.getElementById("tr-from"), to = document.getElementById("tr-to"),
+        input = document.getElementById("tr-in"), count = document.getElementById("tr-count"),
+        out = document.getElementById("tr-out"), status = document.getElementById("tr-status"),
+        go = document.getElementById("tr-go"), copy = document.getElementById("tr-copy");
+    var opts = TR_LANGS.map(function (l) { return '<option value="' + l[0] + '" title="' + esc(l[2]) + '">' + esc(l[1]) + "</option>"; }).join("");
+    from.innerHTML = opts; to.innerHTML = opts;
+    from.value = "en"; to.value = "fi";
+    var last = "";
+    function update() {
+      var n = wordCount(input.value);
+      if (n > TR_MAX_WORDS) {            // trim back to the limit, keeping the original spacing
+        var re = /\S+/g, m, i = 0, end = 0;
+        while ((m = re.exec(input.value)) && i < TR_MAX_WORDS) { end = m.index + m[0].length; i++; }
+        input.value = input.value.slice(0, end); n = TR_MAX_WORDS;
+      }
+      count.textContent = n + " / " + TR_MAX_WORDS + " words";
+      count.classList.toggle("full", n >= TR_MAX_WORDS);
+      go.disabled = !n;
+    }
+    function show(text, isError) {
+      out.innerHTML = "";
+      var p = document.createElement(isError ? "p" : "div");
+      p.className = isError ? "tr-error" : "";
+      p.textContent = text;
+      out.appendChild(p);
+      last = isError ? "" : text;
+      copy.disabled = !last;
+    }
+    input.addEventListener("input", update);
+    input.addEventListener("keydown", function (e) { if ((e.ctrlKey || e.metaKey) && e.key === "Enter") { e.preventDefault(); form.requestSubmit ? form.requestSubmit() : form.dispatchEvent(new Event("submit")); } });
+    document.getElementById("tr-swap").addEventListener("click", function () {
+      var f = from.value; from.value = to.value; to.value = f;
+      if (last) { input.value = last; update(); show("", false); out.innerHTML = '<span class="muted">Press Translate to translate it back.</span>'; }
+    });
+    copy.addEventListener("click", function () {
+      if (!last) return;
+      var done = function () { status.textContent = "Copied"; setTimeout(function () { status.textContent = ""; }, 1600); };
+      if (navigator.clipboard) navigator.clipboard.writeText(last).then(done, function () {});
+    });
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      var text = input.value.trim();
+      if (!text) return;
+      if (from.value === to.value) return show("Choose two different languages.", true);
+      go.disabled = true; status.textContent = "Translating...";
+      var pieces = trChunks(input.value.replace(/^\s+|\s+$/g, ""));
+      Promise.all(pieces.map(function (p) { return translatePiece(p, from.value, to.value); }))
+        .then(function (res) { show(res.join(""), false); status.textContent = ""; })
+        .catch(function (err) {
+          show(err && err.message && !/fetch|network|json/i.test(err.message) ? err.message : "The translator couldn't be reached. Check your connection and try again.", true);
+          status.textContent = "";
+        })
+        .then(function () { go.disabled = !wordCount(input.value); });
+    });
+    update();
+  }
+
   function renderLyrics() {
     var themesEl = document.getElementById("themes-grid");
     if (themesEl) {
@@ -450,6 +555,7 @@
     renderRoster();
     renderBand();
     renderLyrics();
+    renderTranslator();
     renderNews("news-list");
     renderArmory();
     hydrateArt();
