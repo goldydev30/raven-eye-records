@@ -412,12 +412,17 @@
   var TR_MAX_WORDS = 250;
   // Address of the Cloud Run function that relays to Google Cloud Translation (see
   // docs/translator-setup.md). Leave empty to use the free MyMemory service instead.
-  var TR_ENDPOINT = "";
+  var TR_ENDPOINT = "https://rer-translate-387319036805.us-central1.run.app";
   function translateGoogle(text, from, to) {
     var g = function (c) { return c === "nb" ? "no" : c; };
     return fetch(TR_ENDPOINT, { method: "POST", headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ q: text, source: g(from), target: g(to) }) })
-      .then(function (r) { return r.json().then(function (d) { if (!r.ok || d.error) throw new Error(d.error || "The translation failed. Please try again."); return d.translation; }); });
+      .then(function (r) { return r.json().then(function (d) {
+        // A clear answer from our relay (bad input, busy) is shown as is; anything else falls back.
+        if (d && d.error && r.status < 500) { var e = new Error(d.error); e.relay = true; throw e; }
+        if (!r.ok || d.error) throw new Error("relay " + r.status);
+        return d.translation;
+      }); });
   }
   function wordCount(s) { var m = s.trim().match(/\S+/g); return m ? m.length : 0; }
   function utf8Len(s) { return unescape(encodeURIComponent(s)).length; }
@@ -499,8 +504,14 @@
       if (from.value === to.value) return show("Choose two different languages.", true);
       go.disabled = true; status.textContent = "Translating...";
       var clean = input.value.replace(/^\s+|\s+$/g, "");
-      (TR_ENDPOINT ? translateGoogle(clean, from.value, to.value)
-        : Promise.all(trChunks(clean).map(function (p) { return translatePiece(p, from.value, to.value); })).then(function (r) { return r.join(""); }))
+      var viaMyMemory = function () {
+        return Promise.all(trChunks(clean).map(function (p) { return translatePiece(p, from.value, to.value); })).then(function (r) { return r.join(""); });
+      };
+      // Google first; if the relay can't be reached (or refuses), fall back to MyMemory.
+      (TR_ENDPOINT ? translateGoogle(clean, from.value, to.value).catch(function (err) {
+        if (err && err.relay) throw err;
+        return viaMyMemory();
+      }) : viaMyMemory())
         .then(function (res) { show(res, false); status.textContent = ""; })
         .catch(function (err) {
           show(err && err.message && !/fetch|network|json/i.test(err.message) ? err.message : "The translator couldn't be reached. Check your connection and try again.", true);
