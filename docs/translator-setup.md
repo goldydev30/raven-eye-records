@@ -1,5 +1,21 @@
 # Setting up Google translation for the Codex
 
+**Status: live.** The relay runs as the Cloud Run service `rer-translate` in project `raven-eye-511902` (us-central1), at `https://rer-translate-387319036805.us-central1.run.app`. The site points to it in `assets/js/site.js` (`TR_ENDPOINT`) and falls back to MyMemory if it can't be reached.
+
+## What actually worked (Windows, gcloud CLI)
+
+Run from `gcp/translate-function`. In PowerShell, use `gcloud.cmd` (plain `gcloud` is blocked by the script execution policy).
+
+```
+gcloud.cmd services enable run.googleapis.com cloudbuild.googleapis.com artifactregistry.googleapis.com translate.googleapis.com
+gcloud.cmd projects add-iam-policy-binding raven-eye-511902 --member="serviceAccount:387319036805-compute@developer.gserviceaccount.com" --role="roles/cloudbuild.builds.builder"
+gcloud.cmd projects add-iam-policy-binding raven-eye-511902 --member="serviceAccount:387319036805-compute@developer.gserviceaccount.com" --role="roles/cloudtranslate.user"
+gcloud.cmd run deploy rer-translate --source . --function translate --base-image nodejs22 --region us-central1 --max-instances 2
+gcloud.cmd run services update rer-translate --region=us-central1 --no-invoker-iam-check
+```
+
+The organization's domain-restricted-sharing policy blocks `allUsers`, so the service is made public with `--no-invoker-iam-check` instead. To update the code later, pull and rerun the deploy command. The reference steps below are the original console walkthrough.
+
 The Codex translator currently uses MyMemory, a free service with a small daily limit. These steps switch it to Google Cloud Translation, everything inside your own Google Cloud project.
 
 A small **Cloud Run function** sits between the website and Google. It signs in as its own Google identity (a "service account"), so there is no API key to store or leak. You'll end up with one web address to send me.
