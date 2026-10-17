@@ -44,7 +44,7 @@ Column names are matched loosely (see the script's docstring). Set `featured` to
 
 ## Logo
 
-The logo is a raven's eye in a black metal woodcut style: a slit of a blood-red eye under a hooked brow, a heavy beak, and blade-like feathers raking back toward the nape, cut in bone white on black. It blinks when a visitor hovers over it (or taps it on a phone). `scripts/build_logo.py` generates it and writes `assets/js/logo.js`, `assets/img/raven-eye.svg` and the favicon `assets/img/sigil.svg`. The blink is in `assets/js/site.js` and `assets/css/style.css`. The header uses only the "Raven Eye Records" wordmark.
+The logo is a close-up of a raven's eye: a black iris with a crimson rim, reflecting a red moon. Tiny head feathers ring the eye and fade into the page background, so the image has no hard edge. The eye blinks when a visitor hovers over it or taps it on a phone. `scripts/build_logo.py` generates it and writes `assets/js/logo.js`, `assets/img/raven-eye.svg` and the favicon `assets/img/sigil.svg`. The blink is in `assets/js/site.js` and `assets/css/style.css`. The header uses only the "Raven Eye Records" wordmark.
 
 ## Publishing on GitHub Pages
 

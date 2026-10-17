@@ -73,9 +73,9 @@ nav.main a:hover, nav.main a[aria-current="page"] { color: var(--bone); border-b
 .hero h1 { font-family: var(--masthead); font-weight: 400; letter-spacing: .02em; text-shadow: 0 0 40px rgba(110,11,11,.55); line-height: 1.05; font-size: clamp(2.6rem, 6vw, 4.6rem); margin-bottom: .2em; }
 @media (min-width: 761px) { .hero h1 { white-space: nowrap; } }
 .hero .lede { font-size: 1.2rem; max-width: 36ch; color: var(--text); }
-.hero .sigil { width: 100%; max-width: 400px; aspect-ratio: 1; justify-self: center; cursor: crosshair; }
+.hero .sigil { width: 100%; max-width: 440px; aspect-ratio: 1; justify-self: center; cursor: crosshair; -webkit-tap-highlight-color: transparent; }
 .about-grid .sigil { aspect-ratio: 1; }
-@media (max-width: 760px) { .hero .wrap { grid-template-columns: 1fr; } .hero .sigil { max-width: 200px; order: -1; } }
+@media (max-width: 760px) { .hero .wrap { grid-template-columns: 1fr; } .hero .sigil { max-width: 260px; order: -1; } }
 
 .btn { display: inline-block; font-family: var(--display); text-transform: uppercase; letter-spacing: .2em; font-size: .75rem; padding: .85rem 1.4rem; border: 1px solid var(--bone); color: var(--bone); background: transparent; cursor: pointer; transition: background .2s, color .2s, border-color .2s; }
 .btn:hover { background: var(--bone); color: #000; }
@@ -199,9 +199,9 @@ body { background: radial-gradient(ellipse at 50% -10%, rgba(90,6,8,.18), transp
 .band-card:hover, .theme-card:hover { box-shadow: 0 0 28px rgba(110,11,11,.25); }
 ::selection { background: var(--blood); color: #fff; }
 
-/* ---------- logo: the raven's eye blinks on hover ---------- */
-.rer-eye .rer-lid-top, .rer-eye .rer-lid-bottom { transition: transform .11s ease-in; }
-.rer-eye.closed .rer-lid-top { transform: translateY(46px); }
-.rer-eye.closed .rer-lid-bottom { transform: translateY(-8px); }
-.rer-eye.closed .rer-lid-top, .rer-eye.closed .rer-lid-bottom { transition-duration: .07s; }
+/* ---------- logo: the raven's eye blinks when hovered or tapped ---------- */
+.rer-eye .rer-lid-top, .rer-eye .rer-lid-bottom { transition: transform .12s cubic-bezier(.5,0,.8,.4); }
+.rer-eye.closed .rer-lid-top { transform: translateY(142px); }
+.rer-eye.closed .rer-lid-bottom { transform: translateY(-92px); }
+.rer-eye.closed .rer-lid-top, .rer-eye.closed .rer-lid-bottom { transition-duration: .08s; }
 @media (prefers-reduced-motion: reduce) { .rer-eye .rer-lid-top, .rer-eye .rer-lid-bottom { transition: none; } }
