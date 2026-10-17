@@ -410,7 +410,7 @@
     ["uk", "Ukrainian", "Ukraine"]
   ];
   var TR_MAX_WORDS = 250;
-  // Address of the Cloudflare Worker that relays to Google Cloud Translation (see
+  // Address of the Cloud Run function that relays to Google Cloud Translation (see
   // docs/translator-setup.md). Leave empty to use the free MyMemory service instead.
   var TR_ENDPOINT = "";
   function translateGoogle(text, from, to) {
