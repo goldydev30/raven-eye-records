@@ -233,3 +233,13 @@ body { background: radial-gradient(ellipse at 50% -10%, rgba(90,6,8,.18), transp
 #tr-count.full { color: var(--blood-hi); }
 .tr-note { font-size: .9rem; margin: 0; }
 @media (max-width: 760px) { .tr-panes { grid-template-columns: 1fr; } }
+
+/* Featured video on artist pages */
+.video { position: relative; display: block; width: 100%; max-width: 900px; aspect-ratio: 16 / 9; padding: 0; border: 1px solid var(--line); background: #000; cursor: pointer; overflow: hidden; }
+.video img { width: 100%; height: 100%; object-fit: cover; display: block; opacity: .8; filter: saturate(.75); transition: opacity .2s, filter .2s; }
+.video:hover img, .video:focus-visible img { opacity: 1; filter: none; }
+.video iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+.video-play { position: absolute; left: 50%; top: 50%; width: 76px; height: 76px; margin: -38px 0 0 -38px; border-radius: 50%; background: rgba(110,11,11,.88); border: 1px solid var(--blood-hi); box-shadow: 0 0 30px rgba(110,11,11,.6); transition: background .2s, transform .2s; }
+.video-play::after { content: ""; position: absolute; left: 31px; top: 24px; border-style: solid; border-width: 14px 0 14px 22px; border-color: transparent transparent transparent var(--bone); }
+.video:hover .video-play, .video:focus-visible .video-play { background: var(--blood-hi); transform: scale(1.06); }
+.video-title { margin: .8rem 0 0; color: var(--muted); font-size: .95rem; }

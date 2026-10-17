@@ -313,6 +313,8 @@
       (b.website ? '<a class="btn" href="' + esc(b.website) + '" target="_blank" rel="noopener">Official site</a>' : "") +
       "</div></div></div></section>" +
 
+      videoSection(b) +
+
       '<section class="block alt"><div class="wrap"><div class="section-head"><h2>Lyrical themes</h2><a class="more" href="lyrics.html#themes">All themes</a></div>' +
       (themes.length
         ? themes.map(function (t) { return '<a class="tag blood" href="lyrics.html?theme=' + encodeURIComponent(t) + '#themes">' + esc(t) + "</a>"; }).join("")
@@ -326,7 +328,38 @@
 
       (related.length ? '<section class="block"><div class="wrap"><div class="section-head"><h2>Kindred spirits</h2><a class="more" href="roster.html">Full roster</a></div>' +
         '<div class="grid bands">' + related.map(bandCard).join("") + "</div></div></section>" : "");
+    mountVideo(root);
     if (location.hash) { var t = document.getElementById(location.hash.slice(1)); if (t) t.scrollIntoView(); }
+  }
+
+  /* ---------- video ---------- */
+  // One YouTube video per band (data/videos.js). It shows as a thumbnail until clicked,
+  // then swaps in YouTube's privacy-enhanced player.
+  function videoSection(b) {
+    var v = (window.RER_VIDEOS || {})[b.slug];
+    if (!v || !/^[\w-]{11}$/.test(v.id)) return "";
+    return '<section class="block" id="video"><div class="wrap"><div class="section-head"><div><span class="eyebrow">Watch</span><h2>Featured video</h2></div>' +
+      '<a class="more" href="https://www.youtube.com/watch?v=' + v.id + '" target="_blank" rel="noopener">Open on YouTube</a></div>' +
+      '<button class="video" type="button" data-video="' + v.id + '" aria-label="Play ' + esc(v.title || b.name) + '">' +
+      '<img src="https://i.ytimg.com/vi/' + v.id + '/hqdefault.jpg" alt="" loading="lazy">' +
+      '<span class="video-play" aria-hidden="true"></span></button>' +
+      (v.title ? '<p class="video-title">' + esc(v.title) + "</p>" : "") +
+      "</div></section>";
+  }
+  function mountVideo(root) {
+    var btn = root.querySelector("[data-video]");
+    if (!btn) return;
+    btn.addEventListener("click", function () {
+      var f = document.createElement("iframe");
+      f.src = "https://www.youtube-nocookie.com/embed/" + btn.getAttribute("data-video") + "?autoplay=1&rel=0";
+      f.title = btn.getAttribute("aria-label").replace(/^Play /, "");
+      f.allow = "autoplay; encrypted-media; picture-in-picture; fullscreen";
+      f.allowFullscreen = true;
+      var box = document.createElement("div");
+      box.className = "video";
+      box.appendChild(f);
+      btn.replaceWith(box);
+    });
   }
 
   /* ---------- gear ---------- */
